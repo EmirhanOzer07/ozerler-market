@@ -17,7 +17,8 @@
                     colors: {
                         gece: '#0a101d', 
                         sari: '#ffdd00', 
-                        acik_mavi: '#111a2e'
+                        acik_mavi: '#111a2e',
+                        katalog_bg: '#0f172a' 
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -27,14 +28,8 @@
         }
     </script>
     <style>
-        .swiper-slide-active img.slider-bg {
-            transform: scale(1.05);
-            transition: transform 6s ease;
-        }
-        .slider-bg {
-            transform: scale(1);
-            transition: transform 6s ease;
-        }
+        .swiper-slide-active img.slider-bg { transform: scale(1.05); transition: transform 6s ease; }
+        .slider-bg { transform: scale(1); transition: transform 6s ease; }
         .ince-border { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         
         /* Sabit Arama Butonu İçin Nabız Efekti */
@@ -44,43 +39,35 @@
             70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
         }
+        /* Kategori menüsü aktif efekti */
+        .kategori-aktif { color: #ffdd00 !important; font-weight: 600; border-left: 4px solid #ffdd00; padding-left: 0.5rem; }
     </style>
 </head>
 <body class="bg-gece text-white font-sans antialiased overflow-x-hidden">
     
     <div id="yasOnayModali" class="fixed inset-0 z-[100] flex items-center justify-center bg-gece bg-opacity-95 backdrop-blur-md transition-opacity duration-500">
-        <div class="bg-acik_mavi border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl text-center max-w-md mx-4">
-            <div class="text-sari text-6xl mb-6">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
+        <div class="bg-acik_mavi border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl text-center max-w-md mx-4 transform transition-all">
+            <div class="text-sari text-6xl mb-6"><i class="fa-solid fa-triangle-exclamation"></i></div>
             <h2 class="text-3xl font-semibold mb-4 text-white">18 Yaşından Büyük Müsünüz?</h2>
             <p class="text-gray-400 mb-8 text-sm leading-relaxed font-light">
                 Özerler Market web sitesine giriş yapabilmek için yasal yaş sınırını doldurmuş olmanız gerekmektedir.
             </p>
             <div class="flex gap-4 justify-center">
-                <button onclick="yasiOnayla()" class="bg-sari text-gece font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition">
-                    Evet
-                </button>
-                <button onclick="yasiReddet()" class="bg-transparent border border-gray-600 text-gray-400 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-full transition">
-                    Hayır
-                </button>
+                <button onclick="yasiOnayla()" class="bg-sari text-gece font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition shadow-lg">Evet</button>
+                <button onclick="yasiReddet()" class="bg-transparent border border-gray-600 text-gray-400 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-full transition">Hayır</button>
             </div>
         </div>
     </div>
 
     <nav class="flex justify-between items-center px-8 py-5 bg-gece border-b border-gray-800 fixed w-full top-0 z-50 transition-all shadow-md">
-        <div class="text-2xl font-light tracking-wide">
-            <span class="text-sari font-bold">ÖZERLER</span> MARKET
-        </div>
+        <div class="text-2xl font-light tracking-wide"><span class="text-sari font-bold">ÖZERLER</span> MARKET</div>
         <div class="hidden md:flex space-x-10 text-sm font-light">
-            <a href="#urunler" class="hover:text-sari transition tracking-wider">Ürünler</a>
+            <a href="#katalog" class="hover:text-sari transition tracking-wider">Ürünler</a>
             <a href="#iletisim" class="hover:text-sari transition tracking-wider">Sipariş Bölgeleri</a>
             <a href="#sss" class="hover:text-sari transition tracking-wider">SSS</a>
         </div>
         <div>
-            <a href="https://wa.me/905462782300" class="text-sari text-3xl hover:text-yellow-400 transition">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
+            <a href="https://wa.me/905462782300" class="text-sari text-3xl hover:text-yellow-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </nav>
 
@@ -96,7 +83,7 @@
         </div>
     </section>
 
-    <section id="urunler" class="bg-gece">
+    <section id="sliderVitrin" class="bg-gece">
         <div class="swiper urunSlider w-full h-[60vh] md:h-[75vh]">
             <div class="swiper-wrapper">
                 
@@ -105,11 +92,7 @@
                     <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
                     <div class="relative z-20 px-6 max-w-4xl mx-auto">
                         <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Yerli & Yabancı İçecekler</h2>
-                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Yerel markalar ve dünya tatları sizinle</p>
-                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
-                        <a href="https://wa.me/905462782300?text=Merhaba,%20alkollü%20içecek%20çeşitleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
-                            İNCELE →
-                        </a>
+                        <a href="#katalog" onclick="kategoriSec('alkol')" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">KATALOĞU GÖR &rarr;</a>
                     </div>
                 </div>
 
@@ -118,11 +101,7 @@
                     <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
                     <div class="relative z-20 px-6 max-w-4xl mx-auto">
                         <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Şarküteri & Meze</h2>
-                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Kahvaltılık, yancı şarküteri ve taze mezeler Özerler'de</p>
-                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
-                        <a href="https://wa.me/905462782300?text=Merhaba,%20meze%20ve%20şarküteri%20çeşitleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
-                            İNCELE →
-                        </a>
+                        <a href="#katalog" onclick="kategoriSec('meze')" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">KATALOĞU GÖR &rarr;</a>
                     </div>
                 </div>
 
@@ -131,11 +110,7 @@
                     <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
                     <div class="relative z-20 px-6 max-w-4xl mx-auto">
                         <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Kuruyemiş & Atıştırmalık</h2>
-                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Gecenin tadı taptaze kuruyemişler ve cipslerle çıkar</p>
-                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
-                        <a href="https://wa.me/905462782300?text=Merhaba,%20kuruyemiş%20çeşitleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
-                            İNCELE →
-                        </a>
+                        <a href="#katalog" onclick="kategoriSec('kuruyemis')" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">KATALOĞU GÖR &rarr;</a>
                     </div>
                 </div>
 
@@ -144,11 +119,7 @@
                     <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
                     <div class="relative z-20 px-6 max-w-4xl mx-auto">
                         <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Evcil Hayvan Ürünleri</h2>
-                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Can dostlarınız için mama, kum ve bakım ürünleri</p>
-                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
-                        <a href="https://wa.me/905462782300?text=Merhaba,%20evcil%20hayvan%20ürünleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
-                            İNCELE →
-                        </a>
+                        <a href="#katalog" onclick="kategoriSec('evcil')" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">KATALOĞU GÖR &rarr;</a>
                     </div>
                 </div>
 
@@ -157,32 +128,48 @@
                     <img src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
                     <div class="relative z-20 px-6 max-w-4xl mx-auto">
                         <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Temizlik & Hijyen</h2>
-                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Eviniz ve kişisel bakımınız için tüm temizlik ürünleri</p>
-                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
-                        <a href="https://wa.me/905462782300?text=Merhaba,%20temizlik%20ürünleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
-                            İNCELE →
-                        </a>
+                        <a href="#katalog" onclick="kategoriSec('temizlik')" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">KATALOĞU GÖR &rarr;</a>
                     </div>
                 </div>
 
             </div>
-            
             <div class="swiper-button-next !text-sari drop-shadow-lg !font-light scale-75"></div>
             <div class="swiper-button-prev !text-sari drop-shadow-lg !font-light scale-75"></div>
         </div>
     </section>
 
-    <section class="py-20 px-6 bg-gece text-center">
-        <h2 class="text-3xl md:text-5xl font-light text-sari mb-6">ÖZERLER<br><span class="font-bold">TEKEL</span></h2>
-        <div class="w-16 border-t-2 border-sari mx-auto mb-8"></div>
-        <p class="text-xl md:text-2xl text-gray-300 font-light max-w-4xl mx-auto leading-relaxed">
-            İster arayın, ister mesaj atın dilediğiniz zaman, dilediğiniz ürünler <span class="text-sari font-normal bg-acik_mavi px-2 py-1 rounded">eve servis</span> hizmetimiz ile en kısa sürede kapınızda!
-        </p>
+    <section id="katalog" class="bg-katalog_bg py-16 px-4 md:px-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
+            
+            <div class="w-full md:w-1/4">
+                <h3 class="text-2xl text-sari font-light mb-6 border-b border-gray-700 pb-2">Göz At:</h3>
+                <ul class="flex flex-row md:flex-col gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0 text-gray-300 font-light">
+                    <li><button onclick="kategoriSec('hepsi')" id="btn-hepsi" class="kategori-btn kategori-aktif hover:text-sari transition whitespace-nowrap text-left w-full">Tüm Ürünler</button></li>
+                    <li><button onclick="kategoriSec('alkol')" id="btn-alkol" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">İçecekler</button></li>
+                    <li><button onclick="kategoriSec('kuruyemis')" id="btn-kuruyemis" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Kuruyemiş & Cips</button></li>
+                    <li><button onclick="kategoriSec('meze')" id="btn-meze" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Şarküteri & Meze</button></li>
+                    <li><button onclick="kategoriSec('temizlik')" id="btn-temizlik" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Temizlik Ürünleri</button></li>
+                    <li><button onclick="kategoriSec('evcil')" id="btn-evcil" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Evcil Hayvan</button></li>
+                </ul>
+            </div>
+
+            <div class="w-full md:w-3/4">
+                <div id="urunGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
+            </div>
+        </div>
     </section>
 
-    <section class="py-16 bg-acik_mavi overflow-hidden relative">
+    <section class="py-16 px-6 bg-gece text-center border-t border-gray-800">
+        <h2 class="text-2xl md:text-4xl font-light text-white mb-6">Listeden ürünlerinizi seçtiniz mi?</h2>
+        <p class="text-lg text-gray-400 mb-8 font-light">Tek tıkla bize WhatsApp üzerinden siparişinizi yazabilirsiniz.</p>
+        <a href="https://wa.me/905462782300" class="inline-block bg-green-500 text-white hover:bg-green-600 font-bold py-4 px-10 rounded-full transition pulse-wp shadow-lg">
+            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> WhatsApp'tan Sipariş Ver
+        </a>
+    </section>
+
+    <section class="py-16 bg-acik_mavi overflow-hidden relative border-t border-gray-800">
         <h2 class="text-4xl md:text-5xl font-light text-sari text-center mb-12">Dükkan Görsellerimiz</h2>
-        
         <div class="swiper galeriSlider w-full px-4 md:px-12 pb-12">
             <div class="swiper-wrapper">
                 <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
@@ -195,21 +182,28 @@
                 <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
                 <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
                 <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
             </div>
-            
             <div class="swiper-pagination galeri-pagination"></div>
         </div>
     </section>
 
-    <section class="relative py-24 bg-gece overflow-hidden">
+    <section class="relative py-24 bg-gece overflow-hidden border-t border-gray-800">
         <div class="absolute inset-0 bg-black bg-opacity-80 z-10"></div>
         <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1920&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover">
-        
         <div class="relative z-20 max-w-5xl mx-auto text-center px-6 mb-16">
             <h3 class="text-2xl md:text-3xl text-sari font-light mb-4">Nakit, kredi/banka kartı (pos)</h3>
             <p class="text-xl md:text-2xl text-white font-light">ödeme yöntemlerimiz ile kolayca ödeme yapabilirsiniz.</p>
         </div>
-
         <div class="relative z-20 max-w-6xl mx-auto px-6 h-80 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-gray-800">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.355152862024!2d31.45048!3d36.78652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x20cc6bb09cd8f26a!2zw5Z6ZXJsZXIgTWFya2V0!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -218,18 +212,15 @@
     <section id="sss" class="py-20 bg-gece border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-light text-sari text-center mb-12">Sıkça Sorulan Sorular</h2>
-            
             <div class="space-y-4 font-light">
                 <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
                     <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-motorcycle mr-2"></i> Siparişler ortalama kaç dakikada teslim ediliyor?</h3>
                     <p class="text-gray-300">Bulunduğunuz konuma ve yoğunluğa göre değişmekle birlikte, Manavgat merkez, Çağlayan ve Şelale mahallelerine ortalama 15-30 dakika içerisinde hızlı teslimat yapıyoruz.</p>
                 </div>
-                
                 <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
                     <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-credit-card mr-2"></i> Kapıda kartla ödeme yapabiliyor muyum?</h3>
                     <p class="text-gray-300">Evet, kuryelerimiz seyyar pos cihazı taşımaktadır. Kapıda kredi kartı veya banka kartı (temassız özellikli dahil) ile güvenle ödeme yapabilirsiniz.</p>
                 </div>
-
                 <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
                     <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-moon mr-2"></i> Gece kaça kadar paket servisiniz var?</h3>
                     <p class="text-gray-300">Haftanın her günü sabah 07:00'dan gece 02:00'a kadar kesintisiz market ve paket servisimiz devam etmektedir.</p>
@@ -241,11 +232,10 @@
     <footer id="iletisim" class="bg-gece border-t border-gray-800 pt-16 pb-12 px-8">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 ince-border pb-8 mb-8">
             <div class="flex flex-col gap-2">
-                <a href="#urunler" class="text-white hover:text-sari font-light transition">Ürünler</a>
+                <a href="#katalog" class="text-white hover:text-sari font-light transition">Ürünler</a>
                 <a href="#iletisim" class="text-white hover:text-sari font-light transition">Sipariş Bölgeleri</a>
                 <a href="#sss" class="text-white hover:text-sari font-light transition">SSS</a>
             </div>
-            
             <div class="text-left md:text-right space-y-2 font-light text-gray-300">
                 <p>Çağlayan Mah. Hastane Cad. No:140</p>
                 <p>Manavgat / Antalya</p>
@@ -253,10 +243,9 @@
                 <p>Çalışma Saatleri: 07:00 - 02:00</p>
             </div>
         </div>
-        
         <div class="text-center md:text-left flex flex-col md:flex-row justify-between text-gray-500 text-xs font-light">
             <p>© 2026 Özerler Market. Tüm hakları saklıdır.</p>
-            <p onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="mt-2 md:mt-0 cursor-pointer hover:text-sari">Sayfayı Yukarı Kaydır ↑</p>
+            <p onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="mt-2 md:mt-0 cursor-pointer hover:text-sari">Sayfayı Yukarı Kaydır &uarr;</p>
         </div>
     </footer>
 
@@ -266,49 +255,82 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // =========================================================
+        // ÜRÜN VERİTABANI (ÜRÜNLERİ BURADAN GÜNCELLEYEBİLİRSİN)
+        // =========================================================
+        const urunler = [
+            // KURUYEMİŞ & CİPS
+            { ad: "Haribo Altın Ayıcık", fiyat: "25,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Çerezza Peynirli", fiyat: "37,50 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1566478989037-e924e50cb0ee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Karışık Lüks Çerez", fiyat: "90,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1599599810069-87c2b62143ea?q=80&w=300&auto=format&fit=crop" },
+            
+            // İÇECEKLER (ALKOL/ALKOLSÜZ)
+            { ad: "Efes Pilsen Kutu (50cl)", fiyat: "60,00 ₺", kategori: "alkol", resim: "https://images.unsplash.com/photo-1614316382474-5a8aca424077?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Coca Cola Kutu (33cl)", fiyat: "30,00 ₺", kategori: "alkol", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Red Bull Enerji İçeceği", fiyat: "45,00 ₺", kategori: "alkol", resim: "https://images.unsplash.com/photo-1605548230624-8d2d0419c517?q=80&w=300&auto=format&fit=crop" },
+            
+            // ŞARKÜTERİ
+            { ad: "Pınar Dilimli Sucuk", fiyat: "120,00 ₺", kategori: "meze", resim: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Haydari Meze (200g)", fiyat: "55,00 ₺", kategori: "meze", resim: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=300&auto=format&fit=crop" },
+            
+            // TEMİZLİK & EVCİL HAYVAN
+            { ad: "Fairy Bulaşık Deterjanı", fiyat: "65,00 ₺", kategori: "temizlik", resim: "https://images.unsplash.com/photo-1584820927498-cafe4c10a377?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Whiskas Kedi Maması", fiyat: "40,00 ₺", kategori: "evcil", resim: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=300&auto=format&fit=crop" }
+        ];
+
+        // Katalog Filtreleme
+        function kategoriSec(secilenKategori) {
+            document.querySelectorAll('.kategori-btn').forEach(btn => btn.classList.remove('kategori-aktif'));
+            document.getElementById('btn-' + secilenKategori).classList.add('kategori-aktif');
+
+            const grid = document.getElementById('urunGrid');
+            grid.innerHTML = ""; 
+            
+            const gosterilecekUrunler = secilenKategori === 'hepsi' ? urunler : urunler.filter(u => u.kategori === secilenKategori);
+
+            gosterilecekUrunler.forEach(urun => {
+                grid.innerHTML += `
+                    <div class="bg-acik_mavi rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-sari transition group flex flex-col">
+                        <div class="h-48 overflow-hidden bg-white flex items-center justify-center p-2">
+                            <img src="${urun.resim}" alt="${urun.ad}" class="w-full h-full object-cover rounded-lg group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow justify-between text-center">
+                            <h4 class="text-white font-semibold mb-2">${urun.ad}</h4>
+                            <p class="text-sari font-bold text-xl">${urun.fiyat}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // =========================================================
+
         document.addEventListener('DOMContentLoaded', () => {
-            // Yaş Modali
+            kategoriSec('hepsi');
+
+            // 1. Yaş Onay Modali Sistemi (Animasyonuyla Birlikte Geri Eklendi)
             const modal = document.getElementById('yasOnayModali');
             if (localStorage.getItem('yasDogrulandi') === 'evet') {
                 modal.style.display = 'none';
             }
 
-            // 1. Ana Ürünler Slider
+            // 2. Ana Slider
             const urunSwiper = new Swiper('.urunSlider', {
-                loop: true,
-                speed: 1000, 
-                effect: 'slide', 
-                autoplay: {
-                    delay: 4500,
-                    disableOnInteraction: false,
-                },
-                navigation: {
-                    nextEl: '.urunSlider .swiper-button-next',
-                    prevEl: '.urunSlider .swiper-button-prev',
-                }
+                loop: true, speed: 1000, effect: 'slide', 
+                autoplay: { delay: 4500, disableOnInteraction: false },
+                navigation: { nextEl: '.urunSlider .swiper-button-next', prevEl: '.urunSlider .swiper-button-prev' }
             });
 
-            // 2. Dükkan Görselleri Slider
+            // 3. Galeri Slider
             const galeriSwiper = new Swiper('.galeriSlider', {
-                loop: true,
-                slidesPerView: 1.5, 
-                spaceBetween: 20,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.galeri-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    640: { slidesPerView: 2.5, spaceBetween: 20 },
-                    768: { slidesPerView: 3.5, spaceBetween: 30 },
-                    1024: { slidesPerView: 4.5, spaceBetween: 30 },
-                }
+                loop: true, slidesPerView: 1.5, spaceBetween: 20,
+                autoplay: { delay: 3000, disableOnInteraction: false },
+                pagination: { el: '.galeri-pagination', clickable: true },
+                breakpoints: { 640: { slidesPerView: 2.5 }, 1024: { slidesPerView: 4.5 } }
             });
         });
 
+        // Yaş Buton Fonksiyonları (Animasyonlu)
         function yasiOnayla() {
             localStorage.setItem('yasDogrulandi', 'evet');
             const modal = document.getElementById('yasOnayModali');
