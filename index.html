@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özerler Market | Size Ne Lazım?</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gece: '#0a101d', 
+                        sari: '#ffdd00', 
+                        acik_mavi: '#111a2e'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .swiper-slide-active img.slider-bg {
+            transform: scale(1.05);
+            transition: transform 6s ease;
+        }
+        .slider-bg {
+            transform: scale(1);
+            transition: transform 6s ease;
+        }
+        .ince-border { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* Sabit Arama Butonu İçin Nabız Efekti */
+        .pulse-telefon { animation: pulseTel 2s infinite; }
+        @keyframes pulseTel {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gece text-white font-sans antialiased overflow-x-hidden">
+    
+    <div id="yasOnayModali" class="fixed inset-0 z-[100] flex items-center justify-center bg-gece bg-opacity-95 backdrop-blur-md transition-opacity duration-500">
+        <div class="bg-acik_mavi border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl text-center max-w-md mx-4">
+            <div class="text-sari text-6xl mb-6">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h2 class="text-3xl font-semibold mb-4 text-white">18 Yaşından Büyük Müsünüz?</h2>
+            <p class="text-gray-400 mb-8 text-sm leading-relaxed font-light">
+                Özerler Market web sitesine giriş yapabilmek için yasal yaş sınırını doldurmuş olmanız gerekmektedir.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <button onclick="yasiOnayla()" class="bg-sari text-gece font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition">
+                    Evet
+                </button>
+                <button onclick="yasiReddet()" class="bg-transparent border border-gray-600 text-gray-400 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-full transition">
+                    Hayır
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="flex justify-between items-center px-8 py-5 bg-gece border-b border-gray-800 fixed w-full top-0 z-50 transition-all shadow-md">
+        <div class="text-2xl font-light tracking-wide">
+            <span class="text-sari font-bold">ÖZERLER</span> MARKET
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm font-light">
+            <a href="#urunler" class="hover:text-sari transition tracking-wider">Ürünler</a>
+            <a href="#iletisim" class="hover:text-sari transition tracking-wider">Sipariş Bölgeleri</a>
+            <a href="#sss" class="hover:text-sari transition tracking-wider">SSS</a>
+        </div>
+        <div>
+            <a href="https://wa.me/905462782300" class="text-sari text-3xl hover:text-yellow-400 transition">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-8 bg-gece relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <div class="md:w-1/2 text-left">
+                <h1 class="text-4xl md:text-6xl font-light text-sari mb-2 tracking-wide">Özerler Tekel & Market</h1>
+                <h2 class="text-3xl md:text-5xl font-light text-white mb-10">Size ne lazım?</h2>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800&auto=format&fit=crop" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover mx-auto opacity-80 border-2 border-sari p-2 shadow-[0_0_50px_rgba(255,221,0,0.1)]">
+            </div>
+        </div>
+    </section>
+
+    <section id="urunler" class="bg-gece">
+        <div class="swiper urunSlider w-full h-[60vh] md:h-[75vh]">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1614316382474-5a8aca424077?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
+                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
+                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Yerli & Yabancı İçecekler</h2>
+                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Yerel markalar ve dünya tatları sizinle</p>
+                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
+                        <a href="https://wa.me/905462782300?text=Merhaba,%20alkollü%20içecek%20çeşitleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
+                            İNCELE →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
+                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
+                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Şarküteri & Meze</h2>
+                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Kahvaltılık, yancı şarküteri ve taze mezeler Özerler'de</p>
+                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
+                        <a href="https://wa.me/905462782300?text=Merhaba,%20meze%20ve%20şarküteri%20çeşitleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
+                            İNCELE →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
+                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
+                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Kuruyemiş & Atıştırmalık</h2>
+                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Gecenin tadı taptaze kuruyemişler ve cipslerle çıkar</p>
+                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
+                        <a href="https://wa.me/905462782300?text=Merhaba,%20kuruyemiş%20çeşitleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
+                            İNCELE →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
+                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
+                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Evcil Hayvan Ürünleri</h2>
+                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Can dostlarınız için mama, kum ve bakım ürünleri</p>
+                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
+                        <a href="https://wa.me/905462782300?text=Merhaba,%20evcil%20hayvan%20ürünleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
+                            İNCELE →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
+                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
+                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
+                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Temizlik & Hijyen</h2>
+                        <p class="text-2xl md:text-3xl text-white mb-4 font-light">Eviniz ve kişisel bakımınız için tüm temizlik ürünleri</p>
+                        <p class="text-3xl md:text-4xl text-sari mb-8 font-light">Ne lazım?</p>
+                        <a href="https://wa.me/905462782300?text=Merhaba,%20temizlik%20ürünleriniz%20nelerdir?" class="inline-block bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">
+                            İNCELE →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="swiper-button-next !text-sari drop-shadow-lg !font-light scale-75"></div>
+            <div class="swiper-button-prev !text-sari drop-shadow-lg !font-light scale-75"></div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-gece text-center">
+        <h2 class="text-3xl md:text-5xl font-light text-sari mb-6">ÖZERLER<br><span class="font-bold">TEKEL</span></h2>
+        <div class="w-16 border-t-2 border-sari mx-auto mb-8"></div>
+        <p class="text-xl md:text-2xl text-gray-300 font-light max-w-4xl mx-auto leading-relaxed">
+            İster arayın, ister mesaj atın dilediğiniz zaman, dilediğiniz ürünler <span class="text-sari font-normal bg-acik_mavi px-2 py-1 rounded">eve servis</span> hizmetimiz ile en kısa sürede kapınızda!
+        </p>
+    </section>
+
+    <section class="py-16 bg-acik_mavi overflow-hidden relative">
+        <h2 class="text-4xl md:text-5xl font-light text-sari text-center mb-12">Dükkan Görsellerimiz</h2>
+        
+        <div class="swiper galeriSlider w-full px-4 md:px-12 pb-12">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+            </div>
+            
+            <div class="swiper-pagination galeri-pagination"></div>
+        </div>
+    </section>
+
+    <section class="relative py-24 bg-gece overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-80 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1920&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="relative z-20 max-w-5xl mx-auto text-center px-6 mb-16">
+            <h3 class="text-2xl md:text-3xl text-sari font-light mb-4">Nakit, kredi/banka kartı (pos)</h3>
+            <p class="text-xl md:text-2xl text-white font-light">ödeme yöntemlerimiz ile kolayca ödeme yapabilirsiniz.</p>
+        </div>
+
+        <div class="relative z-20 max-w-6xl mx-auto px-6 h-80 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-gray-800">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.355152862024!2d31.45048!3d36.78652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x20cc6bb09cd8f26a!2zw5Z6ZXJsZXIgTWFya2V0!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section id="sss" class="py-20 bg-gece border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-light text-sari text-center mb-12">Sıkça Sorulan Sorular</h2>
+            
+            <div class="space-y-4 font-light">
+                <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
+                    <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-motorcycle mr-2"></i> Siparişler ortalama kaç dakikada teslim ediliyor?</h3>
+                    <p class="text-gray-300">Bulunduğunuz konuma ve yoğunluğa göre değişmekle birlikte, Manavgat merkez, Çağlayan ve Şelale mahallelerine ortalama 15-30 dakika içerisinde hızlı teslimat yapıyoruz.</p>
+                </div>
+                
+                <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
+                    <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-credit-card mr-2"></i> Kapıda kartla ödeme yapabiliyor muyum?</h3>
+                    <p class="text-gray-300">Evet, kuryelerimiz seyyar pos cihazı taşımaktadır. Kapıda kredi kartı veya banka kartı (temassız özellikli dahil) ile güvenle ödeme yapabilirsiniz.</p>
+                </div>
+
+                <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
+                    <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-moon mr-2"></i> Gece kaça kadar paket servisiniz var?</h3>
+                    <p class="text-gray-300">Haftanın her günü sabah 07:00'dan gece 02:00'a kadar kesintisiz market ve paket servisimiz devam etmektedir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="iletisim" class="bg-gece border-t border-gray-800 pt-16 pb-12 px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 ince-border pb-8 mb-8">
+            <div class="flex flex-col gap-2">
+                <a href="#urunler" class="text-white hover:text-sari font-light transition">Ürünler</a>
+                <a href="#iletisim" class="text-white hover:text-sari font-light transition">Sipariş Bölgeleri</a>
+                <a href="#sss" class="text-white hover:text-sari font-light transition">SSS</a>
+            </div>
+            
+            <div class="text-left md:text-right space-y-2 font-light text-gray-300">
+                <p>Çağlayan Mah. Hastane Cad. No:140</p>
+                <p>Manavgat / Antalya</p>
+                <p class="text-sari font-bold mt-2">0546 278 23 00</p>
+                <p>Çalışma Saatleri: 07:00 - 02:00</p>
+            </div>
+        </div>
+        
+        <div class="text-center md:text-left flex flex-col md:flex-row justify-between text-gray-500 text-xs font-light">
+            <p>© 2026 Özerler Market. Tüm hakları saklıdır.</p>
+            <p onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="mt-2 md:mt-0 cursor-pointer hover:text-sari">Sayfayı Yukarı Kaydır ↑</p>
+        </div>
+    </footer>
+
+    <a href="tel:+905462782300" class="fixed bottom-6 left-6 z-50 bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(220,38,38,0.5)] hover:bg-red-700 transition transform hover:scale-110 pulse-telefon">
+        <i class="fa-solid fa-phone-volume"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Yaş Modali
+            const modal = document.getElementById('yasOnayModali');
+            if (localStorage.getItem('yasDogrulandi') === 'evet') {
+                modal.style.display = 'none';
+            }
+
+            // 1. Ana Ürünler Slider
+            const urunSwiper = new Swiper('.urunSlider', {
+                loop: true,
+                speed: 1000, 
+                effect: 'slide', 
+                autoplay: {
+                    delay: 4500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.urunSlider .swiper-button-next',
+                    prevEl: '.urunSlider .swiper-button-prev',
+                }
+            });
+
+            // 2. Dükkan Görselleri Slider
+            const galeriSwiper = new Swiper('.galeriSlider', {
+                loop: true,
+                slidesPerView: 1.5, 
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.galeri-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2.5, spaceBetween: 20 },
+                    768: { slidesPerView: 3.5, spaceBetween: 30 },
+                    1024: { slidesPerView: 4.5, spaceBetween: 30 },
+                }
+            });
+        });
+
+        function yasiOnayla() {
+            localStorage.setItem('yasDogrulandi', 'evet');
+            const modal = document.getElementById('yasOnayModali');
+            modal.style.opacity = '0';
+            setTimeout(() => { modal.style.display = 'none'; }, 500);
+        }
+
+        function yasiReddet() {
+            window.location.href = "https://www.google.com";
+        }
+    </script>
+</body>
+</html>
