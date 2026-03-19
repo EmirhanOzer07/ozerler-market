@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özerler Market | Ürün Kataloğu</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gece: '#0a101d', sari: '#ffdd00', acik_mavi: '#111a2e', katalog_bg: '#0f172a' 
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <style>
+        .kategori-aktif { color: #ffdd00 !important; font-weight: 600; border-left: 4px solid #ffdd00; padding-left: 0.5rem; }
+    </style>
+</head>
+<body class="bg-katalog_bg text-white font-sans antialiased overflow-x-hidden">
+
+    <nav class="flex justify-between items-center px-8 py-5 bg-gece border-b border-gray-800 fixed w-full top-0 z-50 shadow-md">
+        <div class="text-2xl font-light tracking-wide"><span class="text-sari font-bold">ÖZERLER</span> MARKET</div>
+        <div class="hidden md:flex space-x-10 text-sm font-light">
+            <a href="index.html" class="text-sari hover:text-white transition tracking-wider border border-sari px-4 py-2 rounded-full"><i class="fa-solid fa-arrow-left mr-2"></i> Ana Sayfaya Dön</a>
+        </div>
+        <div>
+            <a href="https://wa.me/905462782300" class="text-sari text-3xl hover:text-yellow-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
+            
+            <div class="w-full md:w-1/4">
+                <h3 class="text-2xl text-sari font-light mb-6 border-b border-gray-700 pb-2">Kategoriler</h3>
+                <ul class="flex flex-row md:flex-col gap-4 overflow-x-auto md:overflow-visible pb-4 md:pb-0 text-gray-300 font-light sticky top-32">
+                    <li><button onclick="kategoriSec('hepsi')" id="btn-hepsi" class="kategori-btn kategori-aktif hover:text-sari transition whitespace-nowrap text-left w-full">Tüm Ürünler</button></li>
+                    <li><button onclick="kategoriSec('soguk')" id="btn-soguk" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Soğuk Meşrubatlar</button></li>
+                    <li><button onclick="kategoriSec('kuruyemis')" id="btn-kuruyemis" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Kuruyemiş & Cips</button></li>
+                    <li><button onclick="kategoriSec('temel')" id="btn-temel" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Temel Gıdalar</button></li>
+                    <li><button onclick="kategoriSec('sarkuteri')" id="btn-sarkuteri" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Şarküteri & Manav</button></li>
+                    <li><button onclick="kategoriSec('temizlik')" id="btn-temizlik" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Ev Temizlik & Hijyen</button></li>
+                    <li><button onclick="kategoriSec('evcil')" id="btn-evcil" class="kategori-btn hover:text-sari transition whitespace-nowrap text-left w-full">Evcil Hayvan Ürünleri</button></li>
+                </ul>
+            </div>
+
+            <div class="w-full md:w-3/4">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="kategoriBaslik" class="text-3xl font-light text-white">Tüm Ürünler</h2>
+                    <span id="urunSayisi" class="text-gray-400 font-light text-sm"></span>
+                </div>
+                <div id="urunGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="tel:+905462782300" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white hover:bg-green-600 font-bold py-4 px-6 rounded-full transition shadow-lg text-lg flex items-center">
+        <i class="fa-brands fa-whatsapp mr-2 text-2xl"></i> Sipariş Ver
+    </a>
+
+    <script>
+        // DEVASA ÜRÜN VERİTABANI
+        const urunler = [
+            // SOĞUK MEŞRUBATLAR
+            { ad: "Coca Cola Kutu (33cl)", fiyat: "35,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Fanta Kutu (33cl)", fiyat: "35,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Sprite Kutu (33cl)", fiyat: "35,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Red Bull (250ml)", fiyat: "45,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1605548230624-8d2d0419c517?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Lipton Ice Tea Şeftali", fiyat: "30,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Beypazarı Maden Suyu", fiyat: "10,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Sütaş Ayran (300ml)", fiyat: "15,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Damla Su (1.5L)", fiyat: "15,00 ₺", kategori: "soguk", resim: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=300&auto=format&fit=crop" },
+            
+            // KURUYEMİŞ & CİPS
+            { ad: "Haribo Altın Ayıcık", fiyat: "25,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Çerezza Peynirli Büyük", fiyat: "45,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1566478989037-e924e50cb0ee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Doritos Taco", fiyat: "45,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1566478989037-e924e50cb0ee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Lays Klasik", fiyat: "45,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1566478989037-e924e50cb0ee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Ruffles Ketçaplı", fiyat: "45,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1566478989037-e924e50cb0ee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Tadım Ayçekirdeği (150g)", fiyat: "35,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1599599810069-87c2b62143ea?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Lüks Karışık Kuruyemiş", fiyat: "120,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1599599810069-87c2b62143ea?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Antep Fıstığı (200g)", fiyat: "150,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1599599810069-87c2b62143ea?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Ülker Çikolatalı Gofret", fiyat: "10,00 ₺", kategori: "kuruyemis", resim: "https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=300&auto=format&fit=crop" },
+
+            // TEMEL GIDALAR
+            { ad: "Halk Ekmek", fiyat: "10,00 ₺", kategori: "temel", resim: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Sütaş Tam Yağlı Süt (1L)", fiyat: "35,00 ₺", kategori: "temel", resim: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Doğuş Tiryaki Çay (1kg)", fiyat: "150,00 ₺", kategori: "temel", resim: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Yudum Ayçiçek Yağı (1L)", fiyat: "85,00 ₺", kategori: "temel", resim: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Filiz Spagetti Makarna", fiyat: "20,00 ₺", kategori: "temel", resim: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Keskinoğlu 15'li Yumurta", fiyat: "65,00 ₺", kategori: "temel", resim: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=300&auto=format&fit=crop" },
+
+            // ŞARKÜTERİ & MANAV
+            { ad: "Pınar Kangal Sucuk", fiyat: "250,00 ₺", kategori: "sarkuteri", resim: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Tahsildaroğlu Ezine Peyniri", fiyat: "180,00 ₺", kategori: "sarkuteri", resim: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=300&auto=format&fit=crop" },
+            { ad: "İçim Taze Kaşar (400g)", fiyat: "140,00 ₺", kategori: "sarkuteri", resim: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Marmarabirlik Siyah Zeytin", fiyat: "90,00 ₺", kategori: "sarkuteri", resim: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Haydari Meze (Günlük)", fiyat: "55,00 ₺", kategori: "sarkuteri", resim: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Acılı Ezme (Günlük)", fiyat: "55,00 ₺", kategori: "sarkuteri", resim: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=300&auto=format&fit=crop" },
+
+            // TEMİZLİK
+            { ad: "Fairy Sıvı Bulaşık Det.", fiyat: "65,00 ₺", kategori: "temizlik", resim: "https://images.unsplash.com/photo-1584820927498-cafe4c10a377?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Domestos Çamaşır Suyu", fiyat: "55,00 ₺", kategori: "temizlik", resim: "https://images.unsplash.com/photo-1584820927498-cafe4c10a377?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Familia Tuvalet Kağıdı 16'lı", fiyat: "150,00 ₺", kategori: "temizlik", resim: "https://images.unsplash.com/photo-1584820927498-cafe4c10a377?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Selpak Havlu Peçete", fiyat: "60,00 ₺", kategori: "temizlik", resim: "https://images.unsplash.com/photo-1584820927498-cafe4c10a377?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Sleepy Islak Mendil", fiyat: "30,00 ₺", kategori: "temizlik", resim: "https://images.unsplash.com/photo-1584820927498-cafe4c10a377?q=80&w=300&auto=format&fit=crop" },
+
+            // EVCİL HAYVAN
+            { ad: "Whiskas Yaş Kedi Maması", fiyat: "40,00 ₺", kategori: "evcil", resim: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Proplan Kuru Kedi Maması 1kg", fiyat: "350,00 ₺", kategori: "evcil", resim: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Bentonit Kedi Kumu (5L)", fiyat: "90,00 ₺", kategori: "evcil", resim: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=300&auto=format&fit=crop" },
+            { ad: "Pedigree Köpek Ödül Maması", fiyat: "65,00 ₺", kategori: "evcil", resim: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=300&auto=format&fit=crop" }
+        ];
+
+        // Katalog Filtreleme Fonksiyonu
+        function kategoriSec(secilenKategori) {
+            // Buton renklerini ayarla
+            document.querySelectorAll('.kategori-btn').forEach(btn => btn.classList.remove('kategori-aktif'));
+            if(document.getElementById('btn-' + secilenKategori)) {
+                document.getElementById('btn-' + secilenKategori).classList.add('kategori-aktif');
+            }
+
+            // Başlığı Güncelle
+            const basliklar = {
+                'hepsi': 'Tüm Ürünler', 'soguk': 'Soğuk Meşrubatlar', 'kuruyemis': 'Kuruyemiş & Cips',
+                'temel': 'Temel Gıdalar', 'sarkuteri': 'Şarküteri & Manav', 'temizlik': 'Ev Temizlik & Hijyen', 'evcil': 'Evcil Hayvan Ürünleri'
+            };
+            document.getElementById('kategoriBaslik').innerText = basliklar[secilenKategori] || 'Ürünler';
+
+            // Ürünleri Filtrele ve Bas
+            const grid = document.getElementById('urunGrid');
+            grid.innerHTML = ""; 
+            
+            const gosterilecekUrunler = secilenKategori === 'hepsi' ? urunler : urunler.filter(u => u.kategori === secilenKategori);
+            
+            // Kaç ürün olduğunu yaz
+            document.getElementById('urunSayisi').innerText = `${gosterilecekUrunler.length} ürün listeleniyor`;
+
+            gosterilecekUrunler.forEach(urun => {
+                grid.innerHTML += `
+                    <div class="bg-gece rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-sari transition group flex flex-col">
+                        <div class="h-48 overflow-hidden bg-white flex items-center justify-center p-4">
+                            <img src="${urun.resim}" alt="${urun.ad}" class="w-full h-full object-contain group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow justify-between text-center border-t border-gray-800">
+                            <h4 class="text-white font-semibold mb-3 text-sm h-10 overflow-hidden">${urun.ad}</h4>
+                            <p class="text-sari font-bold text-xl">${urun.fiyat}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Sayfa Yüklendiğinde Ana Sayfadan Gelen Linki (Hash) Kontrol Et
+        document.addEventListener('DOMContentLoaded', () => {
+            // Eğer urunler.html#kuruyemis gibi bir linkle gelindiyse direkt o sekmeyi aç
+            const hash = window.location.hash.substring(1); 
+            if(hash && ['hepsi', 'soguk', 'kuruyemis', 'temel', 'sarkuteri', 'temizlik', 'evcil'].includes(hash)) {
+                kategoriSec(hash);
+            } else {
+                kategoriSec('hepsi');
+            }
+        });
+    </script>
+</body>
+</html>
