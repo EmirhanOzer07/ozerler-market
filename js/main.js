@@ -85,37 +85,39 @@ function initOpenStatus() {
   const el = document.getElementById('open-status');
   if (!el) return;
 
-  function getStatus(lang) {
-    const now = new Date();
-    const total = now.getHours() * 60 + now.getMinutes();
-    // Open 07:00 (420 min) to 02:00 next day (120 min)
-    const isOpen = total >= 420 || total < 120;
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'tr';
 
-    if (lang === 'en') {
-      if (isOpen) {
-        const close = total >= 420 ? (26 * 60 - total) : (120 - total);
-        const h = Math.floor(close / 60), m = close % 60;
-        const closeStr = h > 0 ? `closes at 02:00` : `closes in ${m} min`;
-        return { open: true, text: `Open now · ${closeStr}` };
-      } else {
-        return { open: false, text: `Closed · Opens at 07:00` };
-      }
-    } else {
-      if (isOpen) {
-        return { open: true, text: `Şu an açık · 02:00'de kapanıyor` };
-      } else {
-        const minsLeft = 420 - total;
-        const h = Math.floor(minsLeft / 60), m = minsLeft % 60;
-        return { open: false, text: `Şu an kapalı · 07:00'de açılıyor` };
-      }
-    }
+  function fmt(mins) {
+    const h = Math.floor(mins / 60), m = mins % 60;
+    if (lang === 'en') return h > 0 ? `${h}h ${m}m` : `${m} min`;
+    return h > 0 ? `${h} sa ${m} dk` : `${m} dk`;
   }
 
-  const lang = document.documentElement.lang === 'en' ? 'en' : 'tr';
-  const { open, text } = getStatus(lang);
+  function update() {
+    const now = new Date();
+    const total = now.getHours() * 60 + now.getMinutes();
+    // Open 07:00–02:00 next day
+    const isOpen = total >= 420 || total < 120;
 
-  el.className = `status-badge ${open ? 'open' : 'closed'}`;
-  el.innerHTML = `<span class="status-dot ${open ? 'open' : 'closed'}"></span><span>${text}</span>`;
+    let text;
+    if (isOpen) {
+      const minsToClose = total >= 420 ? (26 * 60 - total) : (120 - total);
+      text = lang === 'en'
+        ? `Open · closes in ${fmt(minsToClose)}`
+        : `Açık · ${fmt(minsToClose)} sonra kapanıyor`;
+    } else {
+      const minsToOpen = total < 420 ? (420 - total) : (24 * 60 - total + 420);
+      text = lang === 'en'
+        ? `Closed · opens in ${fmt(minsToOpen)}`
+        : `Kapalı · ${fmt(minsToOpen)} sonra açılıyor`;
+    }
+
+    el.className = `status-badge ${isOpen ? 'open' : 'closed'}`;
+    el.innerHTML = `<span class="status-dot ${isOpen ? 'open' : 'closed'}"></span><span>${text}</span>`;
+  }
+
+  update();
+  setInterval(update, 60000);
 }
 
 /* ---- Back to Top ---- */
