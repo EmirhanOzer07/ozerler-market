@@ -62,6 +62,21 @@
   to   = "/sss.html"
   status = 200
 
+[[redirects]]
+  from = "/blog/manavgat-pazar-rehberi"
+  to   = "/blog/manavgat-pazar-rehberi.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/whatsapp-siparis"
+  to   = "/blog/whatsapp-siparis.html"
+  status = 200
+
+[[redirects]]
+  from = "/tesekkur"
+  to   = "/tesekkur.html"
+  status = 200
+
 # 404
 [[redirects]]
   from = "/*"
