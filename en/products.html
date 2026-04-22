@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Özerler Market – Manavgat</title>
+  <meta name="description" content="Özerler Market product catalogue. Cold drinks, snacks, breakfast items, deli, groceries, cleaning products and more. Fast delivery in Manavgat.">
+  <link rel="canonical" href="https://www.ozerlermarket.com.tr/en/products">
+  <link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/products"><link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/urunler">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>tailwind={config:{theme:{extend:{colors:{'bg':'#140e08','surface':'#1e1309','surface2':'#2a1b0e','gold':'#d4a843','gold-light':'#e8c76a','crimson':'#8b1a2e','cream':'#f5ede0','muted':'#9a8570'},fontFamily:{display:['"Playfair Display"','serif'],sans:['Inter','sans-serif']}}}}}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-bg text-cream font-sans antialiased overflow-x-hidden">
+
+  <div id="age-gate" style="display:none"><div class="text-center max-w-sm mx-4 px-8 py-12 rounded-3xl border border-gold/20 bg-surface"><div class="text-gold text-5xl mb-6"><i class="fa-solid fa-triangle-exclamation"></i></div><h2 class="font-display text-3xl font-bold text-cream mb-3">Are You 18 or Older?</h2><p class="text-muted text-sm leading-relaxed mb-8">You must be of legal age to enter this site.</p><div class="flex gap-3 justify-center"><button id="yas-evet" class="btn-primary px-8 py-3">Yes, I'm 18+</button><button id="yas-hayir" class="btn-outline px-8 py-3">No</button></div></div></div>
+
+  <div id="cookie-banner" class="bg-surface border-t border-gold/15 px-6 py-4"><div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between"><p class="text-sm text-muted">This site uses cookies. <a href="/en/contact.html#privacy" class="text-gold hover:underline">Privacy policy</a></p><button id="cerez-kabul" class="flex-shrink-0 btn-primary text-sm px-6 py-2.5">Accept</button></div></div>
+
+  <div id="drawer-overlay"></div>
+  <div id="mobile-drawer" class="pt-6 px-6">
+    <div class="flex justify-between items-center mb-8"><div><div class="font-display text-xl font-bold text-gold">ÖZERLER</div><div class="text-xs tracking-[3px] text-cream/40 uppercase">Market</div></div><button id="drawer-close" class="text-muted hover:text-cream transition text-xl"><i class="fa-solid fa-xmark"></i></button></div>
+    <nav class="space-y-1">
+      <a href="/en/index.html"    class="block px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Home</a>
+      <a href="/en/about.html"    class="block px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">About Us</a>
+      <a href="/en/products.html" class="block px-3 py-3 rounded-lg text-gold bg-surface2 font-medium text-sm">Products</a>
+      <a href="/en/contact.html"  class="block px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Contact</a>
+    </nav>
+  </div>
+
+  <nav id="main-nav">
+    <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
+      <a href="/en/index.html" class="flex flex-col leading-none"><span class="font-display text-[22px] font-bold text-gold tracking-wide">ÖZERLER</span><span class="text-[9px] tracking-[4px] text-cream/40 uppercase font-light">Market & Off-Licence</span></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/en/index.html"    class="nav-link">Home</a>
+        <a href="/en/about.html"    class="nav-link">About Us</a>
+        <a href="/en/products.html" class="nav-link active">Products</a>
+        <a href="/en/contact.html"  class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <div class="hidden md:flex items-center gap-2 text-xs tracking-widest"><a href="/urunler.html" class="text-cream/50 hover:text-cream transition">TR</a><span class="text-muted">|</span><span class="text-gold font-semibold">EN</span></div>
+        <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." class="hidden md:flex items-center gap-2 bg-[#25D366] text-white text-xs font-semibold px-4 py-2 rounded-full transition hover:bg-[#1fbd5a]"><i class="fa-brands fa-whatsapp text-sm"></i> Order Now</a>
+        <button id="menu-toggle" class="md:hidden text-cream/80 hover:text-cream transition"><i class="fa-solid fa-bars text-xl"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-36 pb-12 bg-bg relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <p class="text-gold text-xs tracking-[4px] uppercase mb-4">What We Sell</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-cream mb-4 leading-tight">Product Catalogue</h1>
+      <p class="text-muted text-lg max-w-xl">Browse by category below. To order, message us on WhatsApp or call.</p>
+      <div class="section-divider left mt-6"></div>
+    </div>
+  </section>
+
+  <div class="bg-crimson/10 border-y border-crimson/20 py-3 px-6">
+    <div class="max-w-6xl mx-auto flex items-center gap-3 text-sm">
+      <i class="fa-solid fa-circle-info text-crimson flex-shrink-0"></i>
+      <p class="text-cream/70"><strong class="text-cream">Alcoholic beverages and tobacco products</strong> are not shown in this catalogue due to Turkish legal requirements. Please <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20information%20about%20alcoholic%20beverages%20or%20tobacco%20products." class="text-gold hover:underline">message us on WhatsApp</a> for our full range.</p>
+    </div>
+  </div>
+
+  <section class="py-12 bg-bg">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <aside class="lg:w-64 flex-shrink-0">
+          <div class="lg:sticky lg:top-24 bg-surface rounded-2xl border border-gold/10 p-5">
+            <h2 class="text-gold text-xs tracking-[3px] uppercase mb-4">Categories</h2>
+            <ul id="kat-list" class="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"></ul>
+            <div class="mt-5 pt-5 border-t border-gold/10 space-y-3">
+              <h3 class="text-muted text-xs tracking-[2px] uppercase">Special Categories</h3>
+              <a href="https://wa.me/905462782300?text=Hello%2C%20please%20send%20me%20information%20about%20alcoholic%20beverages." class="flex items-center gap-2 w-full text-left py-2.5 px-3 rounded-lg text-muted hover:text-cream hover:bg-surface2 transition text-sm border border-dashed border-muted/20"><i class="fa-solid fa-wine-bottle text-gold/60"></i> Alcoholic Beverages</a>
+              <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20information%20about%20tobacco%20products." class="flex items-center gap-2 w-full text-left py-2.5 px-3 rounded-lg text-muted hover:text-cream hover:bg-surface2 transition text-sm border border-dashed border-muted/20"><i class="fa-solid fa-smoking text-gold/60"></i> Tobacco Products</a>
+              <p class="text-muted/60 text-xs leading-relaxed">Turkish law prohibits displaying prices or images for these categories. Contact us via WhatsApp.</p>
+            </div>
+          </div>
+        </aside>
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-6">
+            <h2 id="kat-baslik" class="font-display text-2xl font-bold text-cream">All Categories</h2>
+            <span id="urun-sayisi" class="text-muted text-sm"></span>
+          </div>
+          <div id="urun-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+          <div class="mt-12 text-center bg-surface rounded-2xl border border-gold/15 p-8">
+            <i class="fa-brands fa-whatsapp text-[#25D366] text-4xl mb-4"></i>
+            <h3 class="font-display text-2xl font-bold text-cream mb-2">Ready to Order?</h3>
+            <p class="text-muted text-sm mb-6">Message us on WhatsApp and we'll process your order right away. Card payment available at the door.</p>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." class="btn-primary text-base inline-flex"><i class="fa-brands fa-whatsapp"></i> Order via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#0a0602]">
+    <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div><div class="font-display text-2xl font-bold text-gold">ÖZERLER</div><div class="text-xs tracking-[4px] text-cream/30 uppercase mb-4">Market & Off-Licence</div><p class="text-muted text-sm">Manavgat's neighbourhood market.</p></div>
+      <div><h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Pages</h3><ul class="space-y-2.5"><li><a href="/en/index.html" class="text-muted hover:text-cream transition text-sm">Home</a></li><li><a href="/en/about.html" class="text-muted hover:text-cream transition text-sm">About Us</a></li><li><a href="/en/products.html" class="text-muted hover:text-cream transition text-sm">Products</a></li><li><a href="/en/contact.html" class="text-muted hover:text-cream transition text-sm">Contact</a></li></ul></div>
+      <div><h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Contact</h3><div class="space-y-3 text-sm"><div class="flex gap-3 text-muted"><i class="fa-solid fa-location-dot text-gold mt-0.5"></i><span>Çağlayan Mah. Hastane Cad. No:140<br>Manavgat, Antalya, Turkey</span></div><div class="flex gap-3 items-center"><i class="fa-solid fa-phone text-gold"></i><a href="tel:+905462782300" class="text-gold font-semibold">+90 546 278 23 00</a></div><div class="flex gap-3 items-center text-muted"><i class="fa-solid fa-clock text-gold"></i><span>Every day 07:00 – 02:00</span></div></div></div>
+    </div>
+    <div class="footer-legal"><p class="mb-1">⚠️ <strong>Legal Notice:</strong> Alcoholic beverages and tobacco products are not sold to persons under 18. Tobacco products are harmful to health.</p><p>© 2026 Özerler Market.</p></div>
+  </footer>
+
+  <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." id="whatsapp-float" aria-label="Order via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+  <script src="/js/main.js"></script>
+  <script src="/js/catalog.js"></script>
+</body>
+</html>

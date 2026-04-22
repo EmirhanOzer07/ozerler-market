@@ -1,0 +1,15 @@
+{
+  "aciklama_tr": "Haftanın her günü aynı saatler geçerlidir.",
+  "aciklama_en": "Same hours apply every day of the week.",
+  "haftalik": {
+    "0": { "gun_tr": "Pazar",     "gun_en": "Sunday",    "acik": true, "baslangic": "07:00", "bitis": "02:00" },
+    "1": { "gun_tr": "Pazartesi", "gun_en": "Monday",    "acik": true, "baslangic": "07:00", "bitis": "02:00" },
+    "2": { "gun_tr": "Salı",      "gun_en": "Tuesday",   "acik": true, "baslangic": "07:00", "bitis": "02:00" },
+    "3": { "gun_tr": "Çarşamba",  "gun_en": "Wednesday", "acik": true, "baslangic": "07:00", "bitis": "02:00" },
+    "4": { "gun_tr": "Perşembe", "gun_en": "Thursday",  "acik": true, "baslangic": "07:00", "bitis": "02:00" },
+    "5": { "gun_tr": "Cuma",      "gun_en": "Friday",    "acik": true, "baslangic": "07:00", "bitis": "02:00" },
+    "6": { "gun_tr": "Cumartesi", "gun_en": "Saturday",  "acik": true, "baslangic": "07:00", "bitis": "02:00" }
+  },
+  "not_tr": "Resmi tatil günlerinde saatler değişebilir.",
+  "not_en": "Hours may vary on public holidays."
+}

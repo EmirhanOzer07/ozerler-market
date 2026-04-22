@@ -1,261 +1,640 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özerler Market | Manavgat Hızlı Paket Servis</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gece: '#0a101d', sari: '#ffdd00', acik_mavi: '#111a2e'
-                    },
-                    fontFamily: { sans: ['Montserrat', 'sans-serif'], }
-                }
-            }
-        }
-    </script>
-    <style>
-        .swiper-slide-active img.slider-bg { transform: scale(1.05); transition: transform 6s ease; }
-        .slider-bg { transform: scale(1); transition: transform 6s ease; }
-        .ince-border { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .pulse-telefon { animation: pulseTel 2s infinite; }
-        @keyframes pulseTel {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Özerler Market | Manavgat'ın Mahalle Marketi – Paket Servis 07:00–02:00</title>
+  <meta name="description" content="Özerler Market, Manavgat'ın güvenilir mahalle marketi. Soğuk içecek, şarküteri, temel gıda ve daha fazlası. Hızlı paket servis, haftanın her günü 07:00–02:00.">
+  <meta name="keywords" content="manavgat market, manavgat tekel, manavgat paket servis, özerler market, manavgat alışveriş, antalya market">
+  <link rel="canonical" href="https://www.ozerlermarket.com.tr/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ozerlermarket.com.tr/">
+  <meta property="og:title" content="Özerler Market | Manavgat'ın Mahalle Marketi">
+  <meta property="og:description" content="Manavgat'ın güvenilir marketi. Haftanın her günü 07:00–02:00 paket servis. WhatsApp ile sipariş verin!">
+  <meta property="og:image" content="https://www.ozerlermarket.com.tr/images/og-image.jpg">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Özerler Market | Manavgat">
+  <meta name="twitter:description" content="Manavgat'ın mahalle marketi. Hızlı paket servis, taze ürünler.">
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/">
+  <link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind = { config: { theme: { extend: { colors: {
+      'bg': '#140e08', 'surface': '#1e1309', 'surface2': '#2a1b0e',
+      'gold': '#d4a843', 'gold-light': '#e8c76a',
+      'crimson': '#8b1a2e', 'cream': '#f5ede0', 'muted': '#9a8570'
+    }, fontFamily: { display: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] } } } } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Store", "LocalBusiness"],
+    "name": "Özerler Market",
+    "description": "Manavgat'ın güvenilir mahalle marketi ve tekel bayisi. Geniş ürün yelpazesi, hızlı paket servis.",
+    "url": "https://www.ozerlermarket.com.tr",
+    "telephone": "+905462782300",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Çağlayan Mah. Hastane Cad. No:140",
+      "addressLocality": "Manavgat",
+      "addressRegion": "Antalya",
+      "postalCode": "07600",
+      "addressCountry": "TR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 36.7989, "longitude": 31.4472 },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "02:00"
+      }
+    ],
+    "paymentAccepted": "Cash, Credit Card, Debit Card",
+    "priceRange": "₺",
+    "currenciesAccepted": "TRY",
+    "areaServed": { "@type": "City", "name": "Manavgat" },
+    "inLanguage": ["tr", "en"]
+  }
+  </script>
 </head>
-<body class="bg-gece text-white font-sans antialiased overflow-x-hidden">
-    
-    <div id="yasOnayModali" class="fixed inset-0 z-[100] flex items-center justify-center bg-gece bg-opacity-95 backdrop-blur-md transition-opacity duration-500">
-        <div class="bg-acik_mavi border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl text-center max-w-md mx-4 transform transition-all">
-            <div class="text-sari text-6xl mb-6"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h2 class="text-3xl font-semibold mb-4 text-white">18 Yaşından Büyük Müsünüz?</h2>
-            <p class="text-gray-400 mb-8 text-sm leading-relaxed font-light">Özerler Market web sitesine giriş yapabilmek için yasal yaş sınırını doldurmuş olmanız gerekmektedir.</p>
-            <div class="flex gap-4 justify-center">
-                <button onclick="yasiOnayla()" class="bg-sari text-gece font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition shadow-lg">Evet</button>
-                <button onclick="yasiReddet()" class="bg-transparent border border-gray-600 text-gray-400 hover:bg-red-600 hover:text-white font-bold py-3 px-8 rounded-full transition">Hayır</button>
-            </div>
+
+<body class="bg-bg text-cream font-sans antialiased overflow-x-hidden">
+
+  <!-- ========== AGE GATE ========== -->
+  <div id="age-gate" style="display:none">
+    <div class="text-center max-w-sm mx-4 px-8 py-12 rounded-3xl border border-gold/20 bg-surface">
+      <div class="text-gold text-5xl mb-6"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h2 class="font-display text-3xl font-bold text-cream mb-3">18 Yaşından<br>Büyük Müsünüz?</h2>
+      <p class="text-muted text-sm leading-relaxed mb-8">Özerler Market'in alkollü içecek ve tütün ürünleri içerdiğinden siteye erişim için yasal yaş sınırını doldurmuş olmanız gerekir.</p>
+      <div class="flex gap-3 justify-center">
+        <button id="yas-evet" class="btn-primary text-base px-10 py-3">Evet, 18'inden büyüğüm</button>
+        <button id="yas-hayir" class="btn-outline text-base px-8 py-3">Hayır</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== COOKIE BANNER ========== -->
+  <div id="cookie-banner" class="bg-surface border-t border-gold/15 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+      <p class="text-sm text-muted leading-relaxed">
+        Bu site kullanıcı deneyimini iyileştirmek için çerez kullanmaktadır. Siteyi kullanmaya devam ederek <a href="/iletisim.html#kvkk" class="text-gold hover:underline">gizlilik politikamızı</a> kabul etmiş sayılırsınız.
+      </p>
+      <button id="cerez-kabul" class="flex-shrink-0 btn-primary text-sm px-6 py-2.5">Kabul Et</button>
+    </div>
+  </div>
+
+  <!-- ========== MOBILE DRAWER ========== -->
+  <div id="drawer-overlay"></div>
+  <div id="mobile-drawer" class="pt-6 px-6">
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <div class="font-display text-xl font-bold text-gold">ÖZERLER</div>
+        <div class="text-xs tracking-[3px] text-cream/40 uppercase">Market</div>
+      </div>
+      <button id="drawer-close" class="text-muted hover:text-cream transition text-xl"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="space-y-1">
+      <a href="/index.html" class="flex items-center gap-3 px-3 py-3 rounded-lg text-gold bg-surface2 font-medium text-sm">Ana Sayfa</a>
+      <a href="/hakkimizda.html" class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Hakkımızda</a>
+      <a href="/urunler.html" class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Ürünlerimiz</a>
+      <a href="/iletisim.html" class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">İletişim</a>
+      <a href="/blog.html" class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Blog</a>
+    </nav>
+    <div class="mt-8 pt-6 border-t border-gold/10">
+      <p class="text-xs text-muted mb-3">Dil / Language</p>
+      <div class="flex gap-3">
+        <span class="text-gold font-semibold text-sm">TR</span>
+        <span class="text-muted text-sm">|</span>
+        <a href="/en/" class="text-cream/50 hover:text-cream transition text-sm">EN</a>
+      </div>
+    </div>
+    <div class="mt-8">
+      <a href="tel:+905462782300" class="flex items-center gap-2 text-gold font-medium text-sm">
+        <i class="fa-solid fa-phone"></i> 0546 278 23 00
+      </a>
+    </div>
+  </div>
+
+  <!-- ========== NAV ========== -->
+  <nav id="main-nav">
+    <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/index.html" class="flex flex-col leading-none">
+        <span class="font-display text-[22px] font-bold text-gold tracking-wide">ÖZERLER</span>
+        <span class="text-[9px] tracking-[4px] text-cream/40 uppercase font-light">Market & Tekel</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/index.html"       class="nav-link active">Ana Sayfa</a>
+        <a href="/hakkimizda.html"  class="nav-link">Hakkımızda</a>
+        <a href="/urunler.html"     class="nav-link">Ürünlerimiz</a>
+        <a href="/iletisim.html"    class="nav-link">İletişim</a>
+        <a href="/blog.html"        class="nav-link">Blog</a>
+      </div>
+
+      <!-- Right: Lang + Hamburger -->
+      <div class="flex items-center gap-5">
+        <div class="hidden md:flex items-center gap-2 text-xs tracking-widest">
+          <span class="text-gold font-semibold">TR</span>
+          <span class="text-muted">|</span>
+          <a href="/en/" class="text-cream/50 hover:text-cream transition">EN</a>
         </div>
+        <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+           class="hidden md:flex items-center gap-2 bg-[#25D366] text-white text-xs font-semibold px-4 py-2 rounded-full transition hover:bg-[#1fbd5a]">
+          <i class="fa-brands fa-whatsapp text-sm"></i> Sipariş Ver
+        </a>
+        <button id="menu-toggle" class="md:hidden text-cream/80 hover:text-cream transition">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <!-- Subtle grain texture overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/></filter><rect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%221%22/></svg>')"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
+      <div class="max-w-3xl">
+        <!-- Status Badge -->
+        <div class="mb-8 reveal">
+          <span id="open-status" class="status-badge">
+            <span class="status-dot open"></span>
+            <span>Yükleniyor...</span>
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="font-display font-bold text-cream reveal mb-4" style="font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 1.1;">
+          Manavgat'ın<br>
+          <span class="text-gold italic">Mahalle Marketi</span>
+        </h1>
+
+        <p class="text-cream/60 reveal text-lg md:text-xl font-light leading-relaxed mb-10 max-w-lg">
+          Taze ürünler, geniş içki yelpazesi, hızlı kapıya teslimat.<br>
+          <strong class="text-cream/80 font-medium">Haftanın her günü 07:00 – 02:00</strong>
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 reveal">
+          <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+             class="btn-primary text-base">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Ver
+          </a>
+          <a href="https://maps.app.goo.gl/ozerlermarket"
+             target="_blank" rel="noopener"
+             class="btn-outline text-base">
+            <i class="fa-solid fa-location-dot"></i> Yol Tarifi Al
+          </a>
+          <a href="tel:+905462782300" class="btn-outline text-base">
+            <i class="fa-solid fa-phone"></i> Hemen Ara
+          </a>
+        </div>
+      </div>
     </div>
 
-    <nav class="flex justify-between items-center px-8 py-5 bg-gece border-b border-gray-800 fixed w-full top-0 z-50 transition-all shadow-md">
-        <div class="text-2xl font-light tracking-wide"><span class="text-sari font-bold">ÖZERLER</span> MARKET</div>
-        <div class="hidden md:flex space-x-10 text-sm font-light">
-            <a href="urunler.html" class="hover:text-sari transition tracking-wider">Tüm Ürünler</a>
-            <a href="#iletisim" class="hover:text-sari transition tracking-wider">Sipariş Bölgeleri</a>
-            <a href="#sss" class="hover:text-sari transition tracking-wider">SSS</a>
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 animate-bounce">
+      <i class="fa-solid fa-chevron-down text-sm"></i>
+    </div>
+  </section>
+
+  <!-- ========== NEDEN ÖZERLER? ========== -->
+  <section class="py-20 bg-surface border-y border-gold/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs tracking-[4px] uppercase mb-3">Neden Özerler Market?</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-cream">Farkımız Hizmetimizde</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Hızlı Teslimat -->
+        <div class="card p-8 text-center reveal">
+          <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-motorcycle text-gold text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-cream mb-3">Hızlı Teslimat</h3>
+          <p class="text-muted text-sm leading-relaxed">Manavgat merkez, Çağlayan ve Şelale mahallelerine ortalama 15–30 dakika içinde kapınızda.</p>
         </div>
-        <div>
-            <a href="https://wa.me/905462782300" class="text-sari text-3xl hover:text-yellow-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+        <!-- Taze Ürün -->
+        <div class="card p-8 text-center reveal">
+          <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-seedling text-gold text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-cream mb-3">Taze & Kaliteli</h3>
+          <p class="text-muted text-sm leading-relaxed">Her gün taze ürünler. Şarküteri, manav ve temel gıdalarda kaliteyi ön planda tutuyoruz.</p>
         </div>
-    </nav>
-
-    <section class="pt-40 pb-20 px-8 bg-gece relative overflow-hidden">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
-            <div class="md:w-1/2 text-left">
-                <h1 class="text-4xl md:text-6xl font-light text-sari mb-2 tracking-wide">Özerler Tekel & Market</h1>
-                <h2 class="text-3xl md:text-5xl font-light text-white mb-10">Size ne lazım?</h2>
-            </div>
-            <div class="md:w-1/2 relative">
-                <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=800&auto=format&fit=crop" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover mx-auto opacity-80 border-2 border-sari p-2 shadow-[0_0_50px_rgba(255,221,0,0.1)]">
-            </div>
+        <!-- Samimi Hizmet -->
+        <div class="card p-8 text-center reveal">
+          <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+            <i class="fa-solid fa-handshake text-gold text-2xl"></i>
+          </div>
+          <h3 class="font-display text-xl font-bold text-cream mb-3">Samimi Hizmet</h3>
+          <p class="text-muted text-sm leading-relaxed">Yıllarca Manavgat'a hizmet eden ailece işletilen bir market. Her müşteri bizim için değerlidir.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="sliderVitrin" class="bg-gece">
-        <div class="swiper urunSlider w-full h-[60vh] md:h-[75vh]">
-            <div class="swiper-wrapper">
-                
-                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
-                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
-                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
-                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Soğuk Meşrubatlar</h2>
-                        <a href="urunler.html#soguk" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">ÜRÜNLERİ GÖR →</a>
-                    </div>
-                </div>
+  <!-- ========== KATEGORİ GRİD ========== -->
+  <section class="py-20 bg-bg">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs tracking-[4px] uppercase mb-3">Ne Satıyoruz?</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-cream">Ürün Kategorilerimiz</h2>
+        <div class="section-divider"></div>
+      </div>
 
-                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
-                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
-                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
-                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Kuruyemiş & Cips</h2>
-                        <a href="urunler.html#kuruyemis" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">ÜRÜNLERİ GÖR →</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
-                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
-                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
-                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Şarküteri & Manav</h2>
-                        <a href="urunler.html#sarkuteri" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">ÜRÜNLERİ GÖR →</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
-                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1585909695284-32d2985ac9c0?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
-                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
-                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Ev Temizlik & Hijyen</h2>
-                        <a href="urunler.html#temizlik" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">ÜRÜNLERİ GÖR →</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide bg-gece relative flex items-center justify-center text-center overflow-hidden">
-                    <div class="absolute inset-0 bg-gece bg-opacity-70 z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1920&auto=format&fit=crop" class="slider-bg absolute inset-0 w-full h-full object-cover">
-                    <div class="relative z-20 px-6 max-w-4xl mx-auto">
-                        <h2 class="text-5xl md:text-7xl font-bold text-sari mb-4 tracking-tight">Evcil Hayvan Ürünleri</h2>
-                        <a href="urunler.html#evcil" class="inline-block mt-8 bg-transparent border border-sari text-sari hover:bg-sari hover:text-gece font-semibold text-sm tracking-widest py-3 px-10 rounded-full transition duration-300">ÜRÜNLERİ GÖR →</a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-button-next !text-sari drop-shadow-lg !font-light scale-75"></div>
-            <div class="swiper-button-prev !text-sari drop-shadow-lg !font-light scale-75"></div>
-        </div>
-    </section>
-
-    <section class="py-16 px-6 bg-gece text-center border-t border-gray-800">
-        <h2 class="text-2xl md:text-4xl font-light text-white mb-6">Tüm ürün kataloğumuza göz attınız mı?</h2>
-        <a href="urunler.html" class="inline-block bg-transparent border-2 border-sari text-sari hover:bg-sari hover:text-gece font-bold py-4 px-10 rounded-full transition shadow-lg mb-4">
-            Ürün Kataloğunu Aç
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <!-- Soğuk Meşrubatlar -->
+        <a href="/urunler.html#soguk" class="kategori-card reveal block">
+          <div class="icon-wrap"><i class="fa-solid fa-bottle-water"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Soğuk Meşrubatlar</h3>
+          <p class="text-muted text-xs">Su, gazlı içecek, meyve suyu</p>
         </a>
-    </section>
+        <!-- Kuruyemiş -->
+        <a href="/urunler.html#kuruyemis" class="kategori-card reveal block">
+          <div class="icon-wrap"><i class="fa-solid fa-cookie-bite"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Kuruyemiş & Atıştırmalık</h3>
+          <p class="text-muted text-xs">Cips, fıstık, çikolata</p>
+        </a>
+        <!-- Kahvaltılık -->
+        <a href="/urunler.html#kahvaltilik" class="kategori-card reveal block">
+          <div class="icon-wrap"><i class="fa-solid fa-egg"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Kahvaltılık & Şarküteri</h3>
+          <p class="text-muted text-xs">Peynir, zeytin, sucuk</p>
+        </a>
+        <!-- Temel Gıdalar -->
+        <a href="/urunler.html#temel" class="kategori-card reveal block">
+          <div class="icon-wrap"><i class="fa-solid fa-basket-shopping"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Temel Gıdalar</h3>
+          <p class="text-muted text-xs">Ekmek, süt, yumurta, makarna</p>
+        </a>
+        <!-- Temizlik -->
+        <a href="/urunler.html#temizlik" class="kategori-card reveal block">
+          <div class="icon-wrap"><i class="fa-solid fa-pump-soap"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Temizlik & Hijyen</h3>
+          <p class="text-muted text-xs">Deterjan, kağıt ürünleri</p>
+        </a>
+        <!-- Evcil -->
+        <a href="/urunler.html#evcil" class="kategori-card reveal block">
+          <div class="icon-wrap"><i class="fa-solid fa-paw"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Evcil Hayvan</h3>
+          <p class="text-muted text-xs">Kedi & köpek ürünleri</p>
+        </a>
+        <!-- Alkol -->
+        <div class="kategori-card alkol-tutun reveal">
+          <div class="icon-wrap"><i class="fa-solid fa-wine-bottle"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Alkollü İçecekler</h3>
+          <p class="text-muted text-xs">Geniş yelpaze için mağazaya uğrayın</p>
+        </div>
+        <!-- Tütün -->
+        <div class="kategori-card alkol-tutun reveal">
+          <div class="icon-wrap"><i class="fa-solid fa-smoking"></i></div>
+          <h3 class="text-cream font-semibold text-sm mb-1">Tütün Ürünleri</h3>
+          <p class="text-muted text-xs">Geniş çeşit için bize uğrayın</p>
+        </div>
+      </div>
 
-    <section class="py-16 bg-acik_mavi overflow-hidden relative border-t border-gray-800">
-        <h2 class="text-4xl md:text-5xl font-light text-sari text-center mb-12">Dükkan Görsellerimiz</h2>
-        <div class="swiper galeriSlider w-full px-4 md:px-12 pb-12">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
-                <div class="swiper-slide h-64 rounded-xl overflow-hidden shadow-lg border border-gray-800"><img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover"></div>
+      <div class="text-center reveal">
+        <a href="/urunler.html" class="btn-outline">Tüm Ürün Kataloğunu Gör <i class="fa-solid fa-arrow-right ml-1"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== YORUMLAR ========== -->
+  <section class="py-20 bg-surface border-y border-gold/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs tracking-[4px] uppercase mb-3">Müşterilerimiz Ne Diyor?</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-cream">Google Yorumları</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Yorum 1 -->
+        <div class="card p-6 reveal">
+          <div class="stars text-sm mb-3">★★★★★</div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-4 italic">"Yıllardır buradan alışveriş yapıyorum. Her zaman taze ürünler, güler yüzlü hizmet. Gecenin geç saatlerinde bile kapıya teslim ediyorlar."</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-gold/10">
+            <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">M</div>
+            <div>
+              <p class="text-cream text-xs font-semibold">Mehmet K.</p>
+              <p class="text-muted text-xs">Aralık 2025</p>
             </div>
-            <div class="swiper-pagination galeri-pagination"></div>
+          </div>
         </div>
-    </section>
+        <!-- Yorum 2 -->
+        <div class="card p-6 reveal">
+          <div class="stars text-sm mb-3">★★★★★</div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-4 italic">"Manavgat'ın en güvenilir marketi. Ürün çeşitliliği harika. WhatsApp'tan sipariş verince 20 dakikada geldi!"</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-gold/10">
+            <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">A</div>
+            <div>
+              <p class="text-cream text-xs font-semibold">Ayşe D.</p>
+              <p class="text-muted text-xs">Kasım 2025</p>
+            </div>
+          </div>
+        </div>
+        <!-- Yorum 3 -->
+        <div class="card p-6 reveal">
+          <div class="stars text-sm mb-3">★★★★★</div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-4 italic">"Was in Manavgat on holiday and found this place easily. Staff was very helpful and service was super fast. Highly recommend!"</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-gold/10">
+            <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">T</div>
+            <div>
+              <p class="text-cream text-xs font-semibold">Thomas S.</p>
+              <p class="text-muted text-xs">Temmuz 2025</p>
+            </div>
+          </div>
+        </div>
+        <!-- Yorum 4 -->
+        <div class="card p-6 reveal">
+          <div class="stars text-sm mb-3">★★★★★</div>
+          <p class="text-cream/80 text-sm leading-relaxed mb-4 italic">"Sabah 7'den gece 2'ye kadar açık olmaları müthiş bir kolaylık. Geç saatte ihtiyaç duyunca buraya başvuruyorum, hiç mahcup etmiyorlar."</p>
+          <div class="flex items-center gap-2 pt-3 border-t border-gold/10">
+            <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">F</div>
+            <div>
+              <p class="text-cream text-xs font-semibold">Fatma Ç.</p>
+              <p class="text-muted text-xs">Ekim 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="relative py-24 bg-gece overflow-hidden border-t border-gray-800">
-        <div class="absolute inset-0 bg-black bg-opacity-80 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1920&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover">
-        <div class="relative z-20 max-w-5xl mx-auto text-center px-6 mb-16">
-            <h3 class="text-2xl md:text-3xl text-sari font-light mb-4">Nakit, kredi/banka kartı (pos)</h3>
-            <p class="text-xl md:text-2xl text-white font-light">ödeme yöntemlerimiz ile kolayca ödeme yapabilirsiniz.</p>
-        </div>
-        <div class="relative z-20 max-w-6xl mx-auto px-6 h-80 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-gray-800">
-            <iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2str"
-width="100%" 
-height="100%" 
-style="border:0;" 
-allowfullscreen="" 
-loading="lazy">
-</iframe>
-        </div>
-    </section>
+  <!-- ========== HARİTA + ÇALIŞMA SAATLERİ ========== -->
+  <section class="py-20 bg-bg">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs tracking-[4px] uppercase mb-3">Bize Ulaşın</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-cream">Konum & Saatler</h2>
+        <div class="section-divider"></div>
+      </div>
 
-    <section id="sss" class="py-20 bg-gece border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-light text-sari text-center mb-12">Sıkça Sorulan Sorular</h2>
-            <div class="space-y-4 font-light">
-                <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
-                    <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-motorcycle mr-2"></i> Siparişler ortalama kaç dakikada teslim ediliyor?</h3>
-                    <p class="text-gray-300">Bulunduğunuz konuma ve yoğunluğa göre değişmekle birlikte, Manavgat merkez, Çağlayan ve Şelale mahallelerine ortalama 15-30 dakika içerisinde hızlı teslimat yapıyoruz.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Harita -->
+        <div class="reveal rounded-2xl overflow-hidden border border-gold/15 shadow-xl" style="height:420px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2str"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Özerler Market Konum">
+          </iframe>
+        </div>
+
+        <!-- Bilgiler -->
+        <div class="reveal space-y-6">
+          <!-- Adres -->
+          <div class="card p-6">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h3 class="text-cream font-semibold mb-1">Adres</h3>
+                <p class="text-muted text-sm">Çağlayan Mah. Hastane Cad. No:140<br>Manavgat / Antalya</p>
+                <a href="https://maps.app.goo.gl/ozerlermarket" target="_blank" rel="noopener"
+                   class="text-gold text-xs hover:text-gold-light transition mt-2 inline-block">
+                  Yol tarifi al <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Telefon -->
+          <div class="card p-6">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h3 class="text-cream font-semibold mb-1">Telefon & WhatsApp</h3>
+                <a href="tel:+905462782300" class="text-gold text-lg font-semibold hover:text-gold-light transition block">0546 278 23 00</a>
+                <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+                   class="text-muted text-xs hover:text-cream transition mt-1 inline-flex items-center gap-1">
+                  <i class="fa-brands fa-whatsapp text-[#25D366]"></i> WhatsApp'tan yaz
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Çalışma Saatleri -->
+          <div class="card p-6">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="w-full">
+                <h3 class="text-cream font-semibold mb-3">Çalışma Saatleri</h3>
+                <div class="space-y-2">
+                  <div class="flex justify-between text-sm hours-row pb-2">
+                    <span class="text-muted">Pazartesi – Pazar</span>
+                    <span class="text-cream font-medium">07:00 – 02:00</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-muted">Resmi Tatiller</span>
+                    <span class="text-cream/60">Değişebilir</span>
+                  </div>
                 </div>
-                <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
-                    <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-credit-card mr-2"></i> Kapıda kartla ödeme yapabiliyor muyum?</h3>
-                    <p class="text-gray-300">Evet, kuryelerimiz seyyar pos cihazı taşımaktadır. Kapıda kredi kartı veya banka kartı (temassız özellikli dahil) ile güvenle ödeme yapabilirsiniz.</p>
-                </div>
-                <div class="bg-acik_mavi p-6 rounded-xl border border-gray-800 hover:border-sari transition">
-                    <h3 class="text-xl text-sari mb-2 font-semibold"><i class="fa-solid fa-moon mr-2"></i> Gece kaça kadar paket servisiniz var?</h3>
-                    <p class="text-gray-300">Haftanın her günü sabah 07:00'dan gece 02:00'a kadar kesintisiz market ve paket servisimiz devam etmektedir.</p>
-                </div>
+                <div id="open-status-alt" class="mt-3"></div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <footer id="iletisim" class="bg-gece border-t border-gray-800 pt-16 pb-12 px-8">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8 ince-border pb-8 mb-8">
-            <div class="flex flex-col gap-2">
-                <a href="urunler.html" class="text-white hover:text-sari font-light transition">Ürün Kataloğu</a>
-                <a href="#iletisim" class="text-white hover:text-sari font-light transition">Sipariş Bölgeleri</a>
-                <a href="#sss" class="text-white hover:text-sari font-light transition">SSS</a>
+          <!-- Ödeme -->
+          <div class="card p-6">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <div>
+                <h3 class="text-cream font-semibold mb-1">Ödeme Yöntemleri</h3>
+                <p class="text-muted text-sm">Nakit · Kredi Kartı · Banka Kartı (Temassız)<br>
+                <span class="text-xs">Kurye seyyar POS cihazı taşır</span></p>
+              </div>
             </div>
-            <div class="text-left md:text-right space-y-2 font-light text-gray-300">
-                <p>Çağlayan Mah. Hastane Cad. No:140</p>
-                <p>Manavgat / Antalya</p>
-                <p class="text-sari font-bold mt-2">0546 278 23 00</p>
-                <p>Çalışma Saatleri: 07:00 - 02:00</p>
-            </div>
+          </div>
         </div>
-        <div class="text-center text-gray-500 text-xs font-light">
-            <p>© 2026 Özerler Market. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG ÖNGÖRÜNÜM ========== -->
+  <section class="py-20 bg-surface border-t border-gold/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-12 reveal">
+        <div>
+          <p class="text-gold text-xs tracking-[4px] uppercase mb-3">Faydalı Yazılar</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-cream">Blog</h2>
         </div>
-    </footer>
+        <a href="/blog.html" class="text-gold text-sm hover:text-gold-light transition hidden md:block">
+          Tümünü Gör <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
+      </div>
 
-    <a href="tel:+905462782300" class="fixed bottom-6 left-6 z-50 bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(220,38,38,0.5)] hover:bg-red-700 transition transform hover:scale-110 pulse-telefon">
-        <i class="fa-solid fa-phone-volume"></i>
-    </a>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="/blog/manavgat-mahalle-market.html" class="blog-card reveal block">
+          <div class="h-44 overflow-hidden bg-surface2">
+            <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=600&auto=format&fit=crop"
+                 alt="Mahalle market alışverişi" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <p class="text-gold text-xs tracking-wider uppercase mb-2">Yerel Yaşam</p>
+            <h3 class="font-display text-lg font-bold text-cream mb-2 leading-snug">Mahalle Marketten Alışverişin 5 Avantajı</h3>
+            <p class="text-muted text-xs leading-relaxed">Neden büyük zincirler yerine mahallenizin güvenilir marketi daha iyi bir tercih?</p>
+          </div>
+        </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('yasOnayModali');
-            if (localStorage.getItem('yasDogrulandi') === 'evet') {
-                modal.style.display = 'none';
-            }
+        <a href="/blog/yaz-icecek-onerileri.html" class="blog-card reveal block">
+          <div class="h-44 overflow-hidden bg-surface2">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=600&auto=format&fit=crop"
+                 alt="Yaz içecekleri" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <p class="text-gold text-xs tracking-wider uppercase mb-2">Yaz Sezonu</p>
+            <h3 class="font-display text-lg font-bold text-cream mb-2 leading-snug">Manavgat Yazında Serin Kalmanın Yolları</h3>
+            <p class="text-muted text-xs leading-relaxed">Akdeniz sıcağında serinleten içecek ve besin önerileri.</p>
+          </div>
+        </a>
 
-            const urunSwiper = new Swiper('.urunSlider', {
-                loop: true, speed: 1000, effect: 'slide', 
-                autoplay: { delay: 4500, disableOnInteraction: false },
-                navigation: { nextEl: '.urunSlider .swiper-button-next', prevEl: '.urunSlider .swiper-button-prev' }
-            });
+        <a href="/blog/evde-kahvalti.html" class="blog-card reveal block">
+          <div class="h-44 overflow-hidden bg-surface2">
+            <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=600&auto=format&fit=crop"
+                 alt="Türk kahvaltısı" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <p class="text-gold text-xs tracking-wider uppercase mb-2">Mutfak</p>
+            <h3 class="font-display text-lg font-bold text-cream mb-2 leading-snug">Evde Mükemmel Türk Kahvaltısı Nasıl Kurulur?</h3>
+            <p class="text-muted text-xs leading-relaxed">Sofranızı zenginleştirecek vazgeçilmez malzemeler ve püf noktaları.</p>
+          </div>
+        </a>
+      </div>
 
-            const galeriSwiper = new Swiper('.galeriSlider', {
-                loop: true, slidesPerView: 1.5, spaceBetween: 20,
-                autoplay: { delay: 3000, disableOnInteraction: false },
-                pagination: { el: '.galeri-pagination', clickable: true },
-                breakpoints: { 640: { slidesPerView: 2.5 }, 1024: { slidesPerView: 4.5 } }
-            });
-        });
+      <div class="text-center mt-8 reveal md:hidden">
+        <a href="/blog.html" class="btn-outline text-sm">Tüm Yazıları Gör</a>
+      </div>
+    </div>
+  </section>
 
-        function yasiOnayla() {
-            localStorage.setItem('yasDogrulandi', 'evet');
-            const modal = document.getElementById('yasOnayModali');
-            modal.style.opacity = '0';
-            setTimeout(() => { modal.style.display = 'none'; }, 500);
-        }
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-[#0a0602]">
+    <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- Brand -->
+      <div>
+        <div class="font-display text-2xl font-bold text-gold">ÖZERLER</div>
+        <div class="text-xs tracking-[4px] text-cream/30 uppercase mb-4">Market & Tekel</div>
+        <p class="text-muted text-sm leading-relaxed mb-5">Manavgat'ın mahalle marketi. Hızlı teslimat, taze ürünler, samimi hizmet — yıllardır yanınızdayız.</p>
+        <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+           class="inline-flex items-center gap-2 text-[#25D366] text-sm hover:text-green-400 transition">
+          <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp ile yazın
+        </a>
+      </div>
 
-        function yasiReddet() { window.location.href = "https://www.google.com"; }
-    </script>
+      <!-- Linkler -->
+      <div>
+        <h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Sayfalar</h3>
+        <ul class="space-y-2.5">
+          <li><a href="/index.html"      class="text-muted hover:text-cream transition text-sm">Ana Sayfa</a></li>
+          <li><a href="/hakkimizda.html" class="text-muted hover:text-cream transition text-sm">Hakkımızda</a></li>
+          <li><a href="/urunler.html"    class="text-muted hover:text-cream transition text-sm">Ürünlerimiz</a></li>
+          <li><a href="/iletisim.html"   class="text-muted hover:text-cream transition text-sm">İletişim</a></li>
+          <li><a href="/blog.html"       class="text-muted hover:text-cream transition text-sm">Blog</a></li>
+          <li><a href="/en/"             class="text-muted hover:text-cream transition text-sm">English</a></li>
+        </ul>
+      </div>
+
+      <!-- İletişim -->
+      <div>
+        <h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">İletişim</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-3 text-muted">
+            <i class="fa-solid fa-location-dot text-gold mt-0.5 flex-shrink-0"></i>
+            <span>Çağlayan Mah. Hastane Cad. No:140<br>Manavgat / Antalya</span>
+          </div>
+          <div class="flex gap-3 items-center">
+            <i class="fa-solid fa-phone text-gold flex-shrink-0"></i>
+            <a href="tel:+905462782300" class="text-gold font-semibold hover:text-gold-light transition">0546 278 23 00</a>
+          </div>
+          <div class="flex gap-3 items-center text-muted">
+            <i class="fa-solid fa-clock text-gold flex-shrink-0"></i>
+            <span>Her gün 07:00 – 02:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yasal Uyarı -->
+    <div class="footer-legal">
+      <p class="mb-1">⚠️ <strong>Yasal Uyarı:</strong> Alkollü içecekler ve tütün ürünleri 18 yaş altına satılmaz. Tütün ürünleri sağlığa zararlıdır.</p>
+      <p>© 2026 Özerler Market. Tüm hakları saklıdır. &nbsp;·&nbsp; Manavgat, Antalya, Türkiye</p>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+     id="whatsapp-float"
+     aria-label="WhatsApp ile sipariş ver"
+     title="WhatsApp ile Sipariş Ver">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <button id="back-to-top" aria-label="Yukarıya çık">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    // İkinci açık/kapalı badge (çalışma saatleri kartındaki)
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('open-status-alt');
+      if (!el) return;
+      const total = new Date().getHours() * 60 + new Date().getMinutes();
+      const isOpen = total >= 420 || total < 120;
+      el.innerHTML = `<span class="status-badge ${isOpen ? 'open' : 'closed'} text-xs">
+        <span class="status-dot ${isOpen ? 'open' : 'closed'}"></span>
+        <span>${isOpen ? 'Şu an açık' : 'Şu an kapalı'}</span>
+      </span>`;
+    });
+  </script>
 </body>
 </html>
-

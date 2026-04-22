@@ -1,0 +1,34 @@
+{
+  "isim": "Özerler Market",
+  "isim_en": "Özerler Market",
+  "slogan_tr": "Manavgat'ın Mahalle Marketi",
+  "slogan_en": "Manavgat's Neighbourhood Market",
+  "adres": {
+    "sokak": "Çağlayan Mah. Hastane Cad. No:140",
+    "ilce": "Manavgat",
+    "il": "Antalya",
+    "posta_kodu": "07600",
+    "tam_tr": "Çağlayan Mah. Hastane Cad. No:140, 07600 Manavgat/Antalya",
+    "tam_en": "Çağlayan Mah. Hastane Cad. No:140, 07600 Manavgat, Antalya, Turkey"
+  },
+  "telefon": "+905462782300",
+  "telefon_gorsel": "0546 278 23 00",
+  "whatsapp_numara": "905462782300",
+  "whatsapp_mesaj_tr": "Merhaba, sipariş vermek istiyorum.",
+  "whatsapp_mesaj_en": "Hello, I would like to place an order.",
+  "email": "",
+  "koordinat": {
+    "lat": 36.7989,
+    "lng": 31.4472
+  },
+  "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2str",
+  "maps_link": "https://maps.app.goo.gl/ozerlermarket",
+  "sosyal_medya": {
+    "instagram": "",
+    "facebook": "",
+    "whatsapp": "https://wa.me/905462782300"
+  },
+  "odeme_yontemleri_tr": ["Nakit", "Kredi Kartı", "Banka Kartı (Temassız)"],
+  "odeme_yontemleri_en": ["Cash", "Credit Card", "Debit Card (Contactless)"],
+  "domain": "https://www.ozerlermarket.com.tr"
+}

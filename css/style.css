@@ -1,0 +1,401 @@
+/* =============================================
+   ÖZERLER MARKET — Global Styles
+   Renk sistemi Tailwind config ile uyumlu.
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+  --bg:         #140e08;
+  --surface:    #1e1309;
+  --surface2:   #2a1b0e;
+  --gold:       #d4a843;
+  --gold-light: #e8c76a;
+  --crimson:    #8b1a2e;
+  --cream:      #f5ede0;
+  --muted:      #9a8570;
+  --border:     rgba(212,168,67,0.15);
+  --nav-height: 72px;
+}
+
+/* ---- Reset / Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Typography ---- */
+.font-display { font-family: 'Playfair Display', serif; }
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ---- Navigation ---- */
+#main-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+#main-nav.scrolled {
+  background: rgba(30, 19, 9, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,0.75);
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--gold);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ---- Mobile Drawer ---- */
+#mobile-drawer {
+  position: fixed;
+  top: 0; right: 0;
+  width: min(320px, 85vw);
+  height: 100vh;
+  background: var(--surface);
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+#mobile-drawer.open { transform: translateX(0); }
+
+#drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#drawer-overlay.open { opacity: 1; pointer-events: all; }
+
+/* ---- Age Gate ---- */
+#age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+#age-gate.hiding { opacity: 0; pointer-events: none; }
+
+/* ---- Cookie Banner ---- */
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 500;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+#cookie-banner.visible { transform: translateY(0); }
+
+/* ---- Hero ---- */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(139,26,46,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(212,168,67,0.06) 0%, transparent 50%),
+    var(--bg);
+}
+
+/* ---- Open/Closed Badge ---- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid;
+}
+
+.status-badge.open {
+  background: rgba(34,197,94,0.1);
+  border-color: rgba(34,197,94,0.3);
+  color: #86efac;
+}
+
+.status-badge.closed {
+  background: rgba(239,68,68,0.1);
+  border-color: rgba(239,68,68,0.3);
+  color: #fca5a5;
+}
+
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.open {
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34,197,94,0.4);
+  animation: pulse-green 2s infinite;
+}
+
+.status-dot.closed { background: #ef4444; }
+
+@keyframes pulse-green {
+  0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+/* ---- Section Divider ---- */
+.section-divider {
+  width: 60px; height: 3px;
+  background: var(--gold);
+  margin: 16px auto 0;
+}
+
+.section-divider.left { margin-left: 0; }
+
+/* ---- Cards ---- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(212,168,67,0.4);
+  transform: translateY(-3px);
+}
+
+/* ---- Kategori Cards (ürünler/ana) ---- */
+.kategori-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.kategori-card:hover {
+  border-color: var(--gold);
+  background: var(--surface2);
+}
+
+.kategori-card.alkol-tutun { border-style: dashed; opacity: 0.8; }
+
+.kategori-card .icon-wrap {
+  width: 64px; height: 64px;
+  background: rgba(212,168,67,0.1);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: background 0.3s;
+}
+
+.kategori-card:hover .icon-wrap { background: rgba(212,168,67,0.2); }
+
+/* ---- WhatsApp Float ---- */
+#whatsapp-float {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 90;
+  width: 58px; height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: wa-pulse 3s 2s infinite;
+}
+
+#whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+  animation: none;
+}
+
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+}
+
+/* ---- Back to Top ---- */
+#back-to-top {
+  position: fixed;
+  bottom: 96px; right: 28px;
+  z-index: 89;
+  width: 42px; height: 42px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+#back-to-top:hover { background: var(--gold); color: var(--bg); }
+
+/* ---- Review Stars ---- */
+.stars { color: var(--gold); letter-spacing: 2px; }
+
+/* ---- Blog Card ---- */
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.blog-card:hover {
+  border-color: rgba(212,168,67,0.5);
+  transform: translateY(-4px);
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding: 13px 27px;
+  border: 1px solid rgba(245,237,224,0.3);
+  border-radius: 999px;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--cream);
+  color: var(--cream);
+  transform: translateY(-1px);
+}
+
+/* ---- Hours Table ---- */
+.hours-row { border-bottom: 1px solid var(--border); }
+.hours-row:last-child { border-bottom: none; }
+.hours-row.today { color: var(--gold); }
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- Blog Post Body ---- */
+.blog-content h2 { font-size: 1.5rem; color: var(--gold); margin: 2rem 0 1rem; }
+.blog-content h3 { font-size: 1.2rem; color: var(--cream); margin: 1.5rem 0 0.75rem; }
+.blog-content p  { color: rgba(245,237,224,0.85); line-height: 1.8; margin-bottom: 1.25rem; }
+.blog-content ul { list-style: disc; padding-left: 1.5rem; color: rgba(245,237,224,0.8); margin-bottom: 1.25rem; }
+.blog-content ul li { margin-bottom: 0.5rem; line-height: 1.7; }
+
+/* ---- Footer ---- */
+.footer-legal {
+  border-top: 1px solid var(--border);
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  #whatsapp-float { bottom: 20px; right: 20px; width: 54px; height: 54px; font-size: 1.4rem; }
+  #back-to-top { bottom: 84px; right: 20px; }
+}

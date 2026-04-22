@@ -1,0 +1,74 @@
+[
+  {
+    "id": "soguk",
+    "isim_tr": "Soğuk Meşrubatlar",
+    "isim_en": "Cold Beverages",
+    "icon": "fa-solid fa-bottle-water",
+    "aciklama_tr": "Su, gazlı içecek, meyve suyu, enerji içeceği ve ayran",
+    "aciklama_en": "Water, soft drinks, fruit juices, energy drinks and ayran",
+    "alkol_tutun": false
+  },
+  {
+    "id": "kuruyemis",
+    "isim_tr": "Kuruyemiş & Atıştırmalık",
+    "isim_en": "Nuts & Snacks",
+    "icon": "fa-solid fa-cookie-bite",
+    "aciklama_tr": "Cips, kuruyemiş, çikolata, şekerleme ve bisküvi",
+    "aciklama_en": "Chips, nuts, chocolate, sweets and biscuits",
+    "alkol_tutun": false
+  },
+  {
+    "id": "kahvaltilik",
+    "isim_tr": "Kahvaltılık & Şarküteri",
+    "isim_en": "Breakfast & Deli",
+    "icon": "fa-solid fa-egg",
+    "aciklama_tr": "Peynir, zeytin, sucuk, reçel, tereyağı ve kahvaltılık ürünler",
+    "aciklama_en": "Cheese, olives, sausage, jam, butter and breakfast items",
+    "alkol_tutun": false
+  },
+  {
+    "id": "temel",
+    "isim_tr": "Temel Gıdalar",
+    "isim_en": "Basic Groceries",
+    "icon": "fa-solid fa-basket-shopping",
+    "aciklama_tr": "Ekmek, süt, yumurta, makarna, yağ, şeker ve temel malzemeler",
+    "aciklama_en": "Bread, milk, eggs, pasta, oil, sugar and kitchen essentials",
+    "alkol_tutun": false
+  },
+  {
+    "id": "temizlik",
+    "isim_tr": "Temizlik & Hijyen",
+    "isim_en": "Cleaning & Hygiene",
+    "icon": "fa-solid fa-pump-soap",
+    "aciklama_tr": "Deterjan, çamaşır suyu, islak mendil ve kişisel bakım ürünleri",
+    "aciklama_en": "Detergent, bleach, wet wipes and personal care products",
+    "alkol_tutun": false
+  },
+  {
+    "id": "evcil",
+    "isim_tr": "Evcil Hayvan",
+    "isim_en": "Pet Supplies",
+    "icon": "fa-solid fa-paw",
+    "aciklama_tr": "Kedi ve köpek maması, kedi kumu ve evcil hayvan malzemeleri",
+    "aciklama_en": "Cat and dog food, cat litter and pet accessories",
+    "alkol_tutun": false
+  },
+  {
+    "id": "alkol",
+    "isim_tr": "Alkollü İçecekler",
+    "isim_en": "Alcoholic Beverages",
+    "icon": "fa-solid fa-wine-bottle",
+    "aciklama_tr": "Bira, şarap, rakı, viski ve geniş içki yelpazemiz için mağazamıza uğrayın ya da WhatsApp'tan yazın.",
+    "aciklama_en": "Beer, wine, raki, whisky and more. Visit our store or message us on WhatsApp for our full selection.",
+    "alkol_tutun": true
+  },
+  {
+    "id": "tutun",
+    "isim_tr": "Tütün Ürünleri",
+    "isim_en": "Tobacco Products",
+    "icon": "fa-solid fa-smoking",
+    "aciklama_tr": "Geniş tütün ürünleri yelpazemiz için lütfen mağazamızı ziyaret edin veya bizimle iletişime geçin.",
+    "aciklama_en": "Please visit our store or contact us for our full range of tobacco products.",
+    "alkol_tutun": true
+  }
+]

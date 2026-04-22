@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "aktif": true,
+    "baslangic": "2026-01-01",
+    "bitis": "2026-12-31",
+    "baslik_tr": "30 Dakika İçinde Kapınızda",
+    "baslik_en": "At Your Door in 30 Minutes",
+    "metin_tr": "Manavgat merkez, Çağlayan ve Şelale mahallelerine hızlı teslimat",
+    "metin_en": "Fast delivery to Manavgat centre, Çağlayan and Şelale neighbourhoods",
+    "icon": "fa-solid fa-motorcycle",
+    "alkol_tutun": false
+  },
+  {
+    "id": 2,
+    "aktif": true,
+    "baslangic": "2026-01-01",
+    "bitis": "2026-12-31",
+    "baslik_tr": "Kapıda Kart ile Ödeme",
+    "baslik_en": "Card Payment at the Door",
+    "metin_tr": "Kurye seyyar POS taşır — kredi kartı, banka kartı ve temassız ödeme",
+    "metin_en": "Our courier carries a mobile POS terminal — credit, debit and contactless",
+    "icon": "fa-solid fa-credit-card",
+    "alkol_tutun": false
+  }
+]

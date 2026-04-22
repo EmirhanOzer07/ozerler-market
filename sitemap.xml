@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- TR Ana Sayfalar -->
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/hakkimizda</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/hakkimizda"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/about"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/urunler</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/urunler"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/products"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/iletisim</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/iletisim"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/contact"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/blog</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Yazıları -->
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/blog/manavgat-mahalle-market</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/blog/yaz-icecek-onerileri</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/blog/evde-kahvalti</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- EN Sayfalar -->
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/"/>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/en/about</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/en/products</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ozerlermarket.com.tr/en/contact</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
