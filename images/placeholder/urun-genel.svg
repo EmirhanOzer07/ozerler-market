@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#2a1b0e"/>
+  <rect x="1" y="1" width="398" height="398" fill="none" stroke="#d4a843" stroke-opacity="0.10" stroke-width="1"/>
+  <g transform="translate(200,188)" opacity="0.20">
+    <circle cx="0" cy="0" r="42" fill="#d4a843"/>
+    <circle cx="0" cy="0" r="28" fill="#2a1b0e"/>
+    <rect x="-5" y="-22" width="10" height="28" rx="3" fill="#d4a843" opacity="0.7"/>
+    <rect x="-22" y="-5" width="28" height="10" rx="3" fill="#d4a843" opacity="0.7"/>
+  </g>
+  <text x="200" y="250" font-family="Georgia,serif" font-size="14" fill="#d4a843" text-anchor="middle" letter-spacing="2" opacity="0.55">ÖZERLER MARKET</text>
+  <text x="200" y="272" font-family="Arial,sans-serif" font-size="11" fill="#9a8570" text-anchor="middle" opacity="0.45">Fotoğraf Yakında</text>
+</svg>

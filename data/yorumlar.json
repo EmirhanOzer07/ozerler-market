@@ -1,38 +1,5 @@
-[
-  {
-    "id": 1,
-    "isim": "Mehmet K.",
-    "yildiz": 5,
-    "tarih_tr": "Aralık 2025",
-    "tarih_en": "December 2025",
-    "yorum_tr": "Yıllardır buradan alışveriş yapıyorum. Her zaman taze ürünler, güler yüzlü hizmet. Gecenin geç saatlerinde bile kapıya teslim ediyorlar, gerçekten memnunum.",
-    "yorum_en": "I've been shopping here for years. Always fresh products and friendly service. They deliver even late at night — truly satisfied."
-  },
-  {
-    "id": 2,
-    "isim": "Ayşe D.",
-    "yildiz": 5,
-    "tarih_tr": "Kasım 2025",
-    "tarih_en": "November 2025",
-    "yorum_tr": "Manavgat'ın en güvenilir marketi. Ürün çeşitliliği harika. WhatsApp'tan sipariş verince 20 dakikada geldi, inanılmaz!",
-    "yorum_en": "The most reliable market in Manavgat. Great product variety. Ordered via WhatsApp and it arrived in 20 minutes, incredible!"
-  },
-  {
-    "id": 3,
-    "isim": "Thomas S.",
-    "yildiz": 5,
-    "tarih_tr": "Temmuz 2025",
-    "tarih_en": "July 2025",
-    "yorum_tr": "Tatil için Manavgat'taydım ve bu dükkanı kolayca buldum. Personel çok yardımsever ve hizmet çok hızlıydı. Kesinlikle tavsiye ederim.",
-    "yorum_en": "Was in Manavgat on holiday and found this place easily. Staff was very helpful and service was super fast. Highly recommend."
-  },
-  {
-    "id": 4,
-    "isim": "Fatma Ç.",
-    "yildiz": 5,
-    "tarih_tr": "Ekim 2025",
-    "tarih_en": "October 2025",
-    "yorum_tr": "Sabah 7'den gece 2'ye kadar açık olmaları müthiş bir kolaylık. Geç saatte ihtiyaç duyunca buraya başvuruyorum, hiç mahcup etmiyorlar.",
-    "yorum_en": "Being open from 7am to 2am is incredibly convenient. I turn to them for late-night needs and they never disappoint."
-  }
-]
+{
+  "reviews": [],
+  "placeIdConfigured": false,
+  "not": "TODO: Google Business sahipliği onaylandıktan sonra Places API ile gerçek yorumlar buraya gelecek. js/reviews.js dosyasına bakın."
+}
