@@ -25,7 +25,11 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
+    #teslimat-harita { background: #1e1309; }
+    .leaflet-popup-content-wrapper { background: #2a1b0e; border: 1px solid rgba(212,168,67,0.2); border-radius: 12px; color: #f5ede0; }
+    .leaflet-popup-tip { background: #2a1b0e; }
     .form-input {
       background: var(--surface2);
       border: 1px solid var(--border);
@@ -165,7 +169,7 @@
         <!-- Harita -->
         <div class="reveal rounded-2xl overflow-hidden border border-gold/15 shadow-xl" style="height:500px">
           <iframe
-            src="https://maps.google.com/maps?q=36.7990050923938,31.449755https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2strz=17https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2stroutput=embed"
+            src="https://maps.google.com/maps?q=36.7990050923938,31.449755&z=17&output=embed"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade" title="Özerler Market Konumu">
           </iframe>
@@ -273,6 +277,37 @@
     </div>
   </section>
 
+  <!-- Teslimat Bölgesi Haritası -->
+  <section class="py-16 bg-surface border-t border-gold/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-8 reveal">
+        <p class="text-gold text-xs tracking-[4px] uppercase mb-3">Paket Servis</p>
+        <h2 class="font-display text-3xl font-bold text-cream mb-2">Teslimat Bölgesi</h2>
+        <p class="text-muted text-sm">Manavgat merkeze ortalama 30 dakika içinde teslimat yapıyoruz. Bölgenizi sorgulamak için WhatsApp'tan yazın.</p>
+      </div>
+      <div class="reveal rounded-2xl overflow-hidden border border-gold/15" style="height:380px; position:relative;">
+        <div id="teslimat-harita" style="height:100%;width:100%;"></div>
+      </div>
+      <div class="flex flex-wrap gap-4 justify-center mt-5 reveal">
+        <div class="flex items-center gap-2 text-sm text-muted">
+          <span class="inline-block w-4 h-4 rounded-full border-2" style="border-color:#d4a843;background:rgba(212,168,67,0.15)"></span>
+          Teslimat bölgesi (yaklaşık)
+        </div>
+        <div class="flex items-center gap-2 text-sm text-muted">
+          <i class="fa-solid fa-location-dot text-crimson text-base"></i>
+          Mağaza konumu
+        </div>
+      </div>
+      <p class="text-center mt-4">
+        <a href="https://wa.me/905462782300?text=Teslimat%20bölgesi%20hakkında%20bilgi%20almak%20istiyorum."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-[#25D366] hover:text-[#1fbd5a] transition text-sm font-medium">
+          <i class="fa-brands fa-whatsapp"></i> Bölgenizi WhatsApp'tan sorun
+        </a>
+      </p>
+    </div>
+  </section>
+
   <!-- KVKK -->
   <section id="kvkk" class="py-16 bg-bg border-t border-gold/10">
     <div class="max-w-4xl mx-auto px-6">
@@ -323,5 +358,46 @@
   <button id="back-to-top" aria-label="Yukarı"><i class="fa-solid fa-chevron-up"></i></button>
 
   <script src="/js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs=" crossorigin=""></script>
+  <script>
+    (function() {
+      const el = document.getElementById('teslimat-harita');
+      if (!el) return;
+      const map = L.map('teslimat-harita', {
+        center: [36.7990050923938, 31.449755],
+        zoom: 14,
+        zoomControl: true,
+        attributionControl: true
+      });
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '© OpenStreetMap, © CARTO',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Teslimat bölgesi polygon
+      L.polygon([
+        [36.8090, 31.4350], [36.8090, 31.4650],
+        [36.7890, 31.4650], [36.7890, 31.4350]
+      ], {
+        color: '#d4a843',
+        weight: 2,
+        fillColor: '#d4a843',
+        fillOpacity: 0.12,
+        dashArray: '6,4'
+      }).addTo(map).bindPopup('<strong style="color:#d4a843">Manavgat Merkez</strong><br><span style="color:#9a8570;font-size:12px">Yaklaşık teslimat bölgesi</span>');
+
+      // Market konumu
+      const icon = L.divIcon({
+        html: '<div style="background:#8b1a2e;border:2px solid #d4a843;border-radius:50%;width:16px;height:16px;"></div>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+        className: ''
+      });
+      L.marker([36.7990050923938, 31.449755], { icon })
+        .addTo(map)
+        .bindPopup('<strong style="color:#d4a843">Özerler Market</strong><br><span style="color:#9a8570;font-size:12px">Çağlayan Mah. Hastane Cad. No:140</span>')
+        .openPopup();
+    })();
+  </script>
 </body>
 </html>

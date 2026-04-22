@@ -1,0 +1,36 @@
+{
+  "merkez": {
+    "lat": 36.7990050923938,
+    "lng": 31.449755,
+    "isim": "Özerler Market"
+  },
+  "bolgeler": [
+    {
+      "id": "manavgat-merkez",
+      "isim_tr": "Manavgat Merkez",
+      "isim_en": "Manavgat Centre",
+      "sure_dk": 15,
+      "renk": "#d4a843",
+      "koordinatlar": [
+        [36.8090, 31.4350],
+        [36.8090, 31.4650],
+        [36.7890, 31.4650],
+        [36.7890, 31.4350]
+      ]
+    },
+    {
+      "id": "caglayan",
+      "isim_tr": "Çağlayan Mahallesi",
+      "isim_en": "Çağlayan Neighbourhood",
+      "sure_dk": 10,
+      "renk": "#d4a843",
+      "koordinatlar": [
+        [36.8050, 31.4400],
+        [36.8050, 31.4600],
+        [36.7950, 31.4600],
+        [36.7950, 31.4400]
+      ]
+    }
+  ],
+  "not": "Koordinatlar yaklaşık teslimat bölgelerini gösterir. Kesin bilgi için WhatsApp'tan sorun."
+}
