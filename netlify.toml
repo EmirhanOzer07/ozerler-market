@@ -57,6 +57,17 @@
   to   = "/en/contact.html"
   status = 200
 
+[[redirects]]
+  from = "/sss"
+  to   = "/sss.html"
+  status = 200
+
+# 404
+[[redirects]]
+  from = "/*"
+  to   = "/404.html"
+  status = 404
+
 # Güvenlik başlıkları
 [[headers]]
   for = "/*"
