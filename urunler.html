@@ -110,64 +110,48 @@
     </div>
   </section>
 
-  <!-- Alkol/Tütün Uyarı Bandı -->
-  <div class="bg-crimson/10 border-y border-crimson/20 py-3 px-6">
-    <div class="max-w-6xl mx-auto flex items-center gap-3 text-sm">
-      <i class="fa-solid fa-circle-info text-crimson flex-shrink-0"></i>
-      <p class="text-cream/70">
-        <strong class="text-cream">Alkollü içecek ve tütün ürünleri</strong> için katalogda görsel ve fiyat bulunmaz; geniş yelpazemiz hakkında
-        <a href="https://wa.me/905462782300?text=Merhaba%2C%20alkol%20veya%20t%C3%BCt%C3%BCn%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="text-gold hover:underline">WhatsApp'tan bilgi alabilirsiniz</a>.
-      </p>
-    </div>
-  </div>
-
-  <!-- Katalog -->
-  <section class="py-12 bg-bg">
+  <!-- Katalog Grid -->
+  <section class="py-14 bg-bg">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col lg:flex-row gap-8">
+      <div id="katalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-        <!-- Sidebar -->
-        <aside class="lg:w-64 flex-shrink-0">
-          <div class="lg:sticky lg:top-24 bg-surface rounded-2xl border border-gold/10 p-5">
-            <h2 class="text-gold text-xs tracking-[3px] uppercase mb-4">Kategoriler</h2>
-            <ul id="kat-list" class="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"></ul>
-
-            <!-- Alkol/Tütün -->
-            <div class="mt-5 pt-5 border-t border-gold/10 space-y-3">
-              <h3 class="text-muted text-xs tracking-[2px] uppercase">Özel Kategoriler</h3>
-              <a href="https://wa.me/905462782300?text=Alkol%C3%BC%20i%C3%A7ecek%20fiyat%20listesi%20istiyorum."
-                 class="flex items-center gap-2 w-full text-left py-2.5 px-3 rounded-lg text-muted hover:text-cream hover:bg-surface2 transition text-sm border border-dashed border-muted/20">
-                <i class="fa-solid fa-wine-bottle text-gold/60"></i> Alkollü İçecekler
-              </a>
-              <a href="https://wa.me/905462782300?text=T%C3%BCt%C3%BCn%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20istiyorum."
-                 class="flex items-center gap-2 w-full text-left py-2.5 px-3 rounded-lg text-muted hover:text-cream hover:bg-surface2 transition text-sm border border-dashed border-muted/20">
-                <i class="fa-solid fa-smoking text-gold/60"></i> Tütün Ürünleri
-              </a>
-              <p class="text-muted/60 text-xs leading-relaxed">Bu kategoriler için yasal zorunluluk gereği fiyat ve görsel paylaşılamamaktadır. WhatsApp'tan bilgi alabilirsiniz.</p>
-            </div>
+      <!-- Alkol / Tütün kartları -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="https://wa.me/905462782300?text=Alkoll%C3%BC%20i%C3%A7ecek%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+           target="_blank" rel="noopener"
+           class="flex items-center gap-5 p-5 rounded-2xl border border-dashed border-crimson/30 bg-crimson/5 hover:bg-crimson/10 transition group">
+          <div class="w-12 h-12 rounded-full bg-crimson/15 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-wine-bottle text-crimson text-lg"></i>
           </div>
-        </aside>
-
-        <!-- Grid -->
-        <div class="flex-1">
-          <div id="arama-wrapper"></div>
-          <div class="flex items-center justify-between mb-6">
-            <h2 id="kat-baslik" class="font-display text-2xl font-bold text-cream">Tüm Kategoriler</h2>
-            <span id="urun-sayisi" class="text-muted text-sm"></span>
+          <div class="flex-1">
+            <h3 class="text-cream font-semibold">Alkollü İçecekler</h3>
+            <p class="text-muted text-xs mt-0.5">Bira, şarap, rakı, viski ve daha fazlası — yasal zorunluluk gereği fiyat/görsel paylaşılamamaktadır.</p>
           </div>
-          <div id="urun-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
-
-          <!-- Sipariş CTA -->
-          <div class="mt-12 text-center bg-surface rounded-2xl border border-gold/15 p-8">
-            <i class="fa-brands fa-whatsapp text-[#25D366] text-4xl mb-4"></i>
-            <h3 class="font-display text-2xl font-bold text-cream mb-2">Sipariş Vermek mi İstiyorsunuz?</h3>
-            <p class="text-muted text-sm mb-6">WhatsApp'tan yazın, hızlıca işleme alıyoruz. Kapıda POS ile ödeme imkânı.</p>
-            <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
-               class="btn-primary text-base inline-flex">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Ver
-            </a>
+          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl group-hover:scale-110 transition"></i>
+        </a>
+        <a href="https://wa.me/905462782300?text=T%C3%BCt%C3%BCn%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+           target="_blank" rel="noopener"
+           class="flex items-center gap-5 p-5 rounded-2xl border border-dashed border-crimson/30 bg-crimson/5 hover:bg-crimson/10 transition group">
+          <div class="w-12 h-12 rounded-full bg-crimson/15 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-smoking text-crimson text-lg"></i>
           </div>
-        </div>
+          <div class="flex-1">
+            <h3 class="text-cream font-semibold">Tütün Ürünleri</h3>
+            <p class="text-muted text-xs mt-0.5">Geniş tütün yelpazemiz için WhatsApp'tan bilgi alabilirsiniz. 18 yaş altına satış yapılmaz.</p>
+          </div>
+          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl group-hover:scale-110 transition"></i>
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center bg-surface rounded-2xl border border-gold/15 p-10">
+        <i class="fa-brands fa-whatsapp text-[#25D366] text-4xl mb-4"></i>
+        <h3 class="font-display text-2xl font-bold text-cream mb-2">Aradığınızı bulamadınız mı?</h3>
+        <p class="text-muted text-sm mb-6 max-w-md mx-auto">Rafımızdaki her ürünü buraya sığdıramadık. WhatsApp'tan yazın, ne var ne yok söyleyelim.</p>
+        <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+           class="btn-primary text-base inline-flex">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Ver
+        </a>
       </div>
     </div>
   </section>
