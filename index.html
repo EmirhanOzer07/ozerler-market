@@ -81,7 +81,7 @@
         "closes": "02:00"
       }
     ],
-    "paymentAccepted": "Cash, Credit Card, Debit Card",
+    "paymentAccepted": "Cash",
     "priceRange": "₺",
     "currenciesAccepted": "TRY",
     "areaServed": { "@type": "City", "name": "Manavgat" },
@@ -247,6 +247,33 @@
     <!-- Scroll hint -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 animate-bounce">
       <i class="fa-solid fa-chevron-down text-sm"></i>
+    </div>
+  </section>
+
+  <!-- ========== KAMPANYA ŞERİDİ ========== -->
+  <section class="bg-surface2 border-y border-gold/15 py-5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-motorcycle text-gold text-sm"></i>
+          </div>
+          <div>
+            <p class="text-cream font-semibold text-sm">30 Dakika İçinde Kapınızda</p>
+            <p class="text-muted text-xs">Manavgat merkez, Çağlayan ve Şelale mahallelerine hızlı teslimat</p>
+          </div>
+        </div>
+        <div class="hidden sm:block w-px h-8 bg-gold/15"></div>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-money-bill-wave text-gold text-sm"></i>
+          </div>
+          <div>
+            <p class="text-cream font-semibold text-sm">Nakit Ödeme</p>
+            <p class="text-muted text-xs">Teslimat kapıda nakit ödeme ile tamamlanır</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -421,7 +448,7 @@
         <!-- Harita -->
         <div class="reveal rounded-2xl overflow-hidden border border-gold/15 shadow-xl" style="height:420px">
           <iframe
-            src="https://maps.google.com/maps?q=36.7990050923938,31.449755https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2strz=17https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2stroutput=embed"
+            src="https://maps.google.com/maps?q=36.7990050923938,31.449755&z=17&output=embed"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade" title="Özerler Market Konum">
           </iframe>
@@ -490,12 +517,11 @@
           <div class="card p-6">
             <div class="flex gap-4 items-start">
               <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold flex-shrink-0">
-                <i class="fa-solid fa-credit-card"></i>
+                <i class="fa-solid fa-money-bill-wave"></i>
               </div>
               <div>
-                <h3 class="text-cream font-semibold mb-1">Ödeme Yöntemleri</h3>
-                <p class="text-muted text-sm">Nakit · Kredi Kartı · Banka Kartı (Temassız)<br>
-                <span class="text-xs">Kurye seyyar POS cihazı taşır</span></p>
+                <h3 class="text-cream font-semibold mb-1">Ödeme Yöntemi</h3>
+                <p class="text-muted text-sm">Teslimat kapıda <strong class="text-cream">nakit</strong> ödeme ile tamamlanır.</p>
               </div>
             </div>
           </div>

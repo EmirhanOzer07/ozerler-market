@@ -16,11 +16,11 @@
     "aktif": true,
     "baslangic": "2026-01-01",
     "bitis": "2026-12-31",
-    "baslik_tr": "Kapıda Kart ile Ödeme",
-    "baslik_en": "Card Payment at the Door",
-    "metin_tr": "Kurye seyyar POS taşır — kredi kartı, banka kartı ve temassız ödeme",
-    "metin_en": "Our courier carries a mobile POS terminal — credit, debit and contactless",
-    "icon": "fa-solid fa-credit-card",
+    "baslik_tr": "Nakit Ödeme",
+    "baslik_en": "Cash Payment",
+    "metin_tr": "Teslimat kapıda nakit ödeme ile tamamlanır",
+    "metin_en": "Delivery is completed with cash payment at the door",
+    "icon": "fa-solid fa-money-bill-wave",
     "alkol_tutun": false
   }
 ]
