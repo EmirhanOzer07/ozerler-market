@@ -3,38 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products | Özerler Market – Manavgat</title>
-  <meta name="description" content="Özerler Market product catalogue. Cold drinks, snacks, breakfast items, deli, groceries, cleaning products and more. Fast delivery in Manavgat.">
+  <title>Products | Özerler Market – Manavgat Neighbourhood Store</title>
+  <meta name="description" content="Özerler Market product catalogue. Cold drinks, hot beverages, breakfast, dairy, groceries, snacks, frozen, cleaning, personal care and pet supplies. Fast delivery in Manavgat.">
   <link rel="canonical" href="https://www.ozerlermarket.com.tr/en/products">
-  <link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/products"><link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/urunler">
+  <meta property="og:title" content="Products | Özerler Market – Manavgat">
+  <meta property="og:description" content="Manavgat's widest product range. Cold drinks, groceries, cleaning, pet supplies and more. WhatsApp order.">
+  <meta property="og:url" content="https://www.ozerlermarket.com.tr/en/products">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/products">
+  <link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/urunler">
   <link rel="icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script>tailwind={config:{theme:{extend:{colors:{'bg':'#140e08','surface':'#1e1309','surface2':'#2a1b0e','gold':'#d4a843','gold-light':'#e8c76a','crimson':'#8b1a2e','cream':'#f5ede0','muted':'#9a8570'},fontFamily:{display:['"Playfair Display"','serif'],sans:['Inter','sans-serif']}}}}}</script>
+  <script>
+    tailwind = { config: { theme: { extend: { colors: {
+      'bg': '#140e08', 'surface': '#1e1309', 'surface2': '#2a1b0e',
+      'gold': '#d4a843', 'gold-light': '#e8c76a',
+      'crimson': '#8b1a2e', 'cream': '#f5ede0', 'muted': '#9a8570'
+    }, fontFamily: { display: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] } } } } }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    #kat-nav {
+      position: sticky;
+      top: 64px;
+      z-index: 40;
+      background: rgba(20,14,8,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212,168,67,0.12);
+    }
+    #kat-nav .kat-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #9a8570;
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    #kat-nav .kat-link:hover,
+    #kat-nav .kat-link.active {
+      color: #d4a843;
+      background: rgba(212,168,67,0.08);
+    }
+    #kat-nav .kat-link.restricted {
+      color: rgba(139,26,46,0.7);
+    }
+    #kat-nav .kat-link.restricted:hover,
+    #kat-nav .kat-link.restricted.active {
+      color: #8b1a2e;
+      background: rgba(139,26,46,0.08);
+    }
+    .chip {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      background: rgba(30,19,9,1);
+      border: 1px solid rgba(212,168,67,0.12);
+      color: #9a8570;
+    }
+    .kat-section { scroll-margin-top: 120px; }
+    .restricted-card {
+      border: 1px dashed rgba(139,26,46,0.35);
+      background: rgba(139,26,46,0.04);
+    }
+  </style>
 </head>
+
 <body class="bg-bg text-cream font-sans antialiased overflow-x-hidden">
 
-  <div id="age-gate" style="display:none"><div class="text-center max-w-sm mx-4 px-8 py-12 rounded-3xl border border-gold/20 bg-surface"><div class="text-gold text-5xl mb-6"><i class="fa-solid fa-triangle-exclamation"></i></div><h2 class="font-display text-3xl font-bold text-cream mb-3">Are You 18 or Older?</h2><p class="text-muted text-sm leading-relaxed mb-8">You must be of legal age to enter this site.</p><div class="flex gap-3 justify-center"><button id="yas-evet" class="btn-primary px-8 py-3">Yes, I'm 18+</button><button id="yas-hayir" class="btn-outline px-8 py-3">No</button></div></div></div>
-
-  <div id="cookie-banner" class="bg-surface border-t border-gold/15 px-6 py-4"><div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between"><p class="text-sm text-muted">This site uses cookies. <a href="/en/contact.html#privacy" class="text-gold hover:underline">Privacy policy</a></p><button id="cerez-kabul" class="flex-shrink-0 btn-primary text-sm px-6 py-2.5">Accept</button></div></div>
-
-  <div id="drawer-overlay"></div>
-  <div id="mobile-drawer" class="pt-6 px-6">
-    <div class="flex justify-between items-center mb-8"><div><div class="font-display text-xl font-bold text-gold">ÖZERLER</div><div class="text-xs tracking-[3px] text-cream/40 uppercase">Market</div></div><button id="drawer-close" class="text-muted hover:text-cream transition text-xl"><i class="fa-solid fa-xmark"></i></button></div>
-    <nav class="space-y-1">
-      <a href="/en/index.html"    class="block px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Home</a>
-      <a href="/en/about.html"    class="block px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">About Us</a>
-      <a href="/en/products.html" class="block px-3 py-3 rounded-lg text-gold bg-surface2 font-medium text-sm">Products</a>
-      <a href="/en/contact.html"  class="block px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Contact</a>
-    </nav>
+  <!-- Age Gate -->
+  <div id="age-gate" style="display:none">
+    <div class="text-center max-w-sm mx-4 px-8 py-12 rounded-3xl border border-gold/20 bg-surface">
+      <div class="text-gold text-5xl mb-6"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h2 class="font-display text-3xl font-bold text-cream mb-3">Are You 18<br>or Older?</h2>
+      <p class="text-muted text-sm leading-relaxed mb-8">You must be of legal age to access this site.</p>
+      <div class="flex gap-3 justify-center">
+        <button id="yas-evet" class="btn-primary px-8 py-3">Yes, I'm 18+</button>
+        <button id="yas-hayir" class="btn-outline px-8 py-3">No</button>
+      </div>
+    </div>
   </div>
 
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="bg-surface border-t border-gold/15 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+      <p class="text-sm text-muted">This site uses cookies. <a href="/en/contact.html#privacy" class="text-gold hover:underline">Privacy policy</a></p>
+      <button id="cerez-kabul" class="flex-shrink-0 btn-primary text-sm px-6 py-2.5">Accept</button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer-overlay"></div>
+  <div id="mobile-drawer" class="pt-6 px-6">
+    <div class="flex justify-between items-center mb-8">
+      <div><div class="font-display text-xl font-bold text-gold">ÖZERLER</div><div class="text-xs tracking-[3px] text-cream/40 uppercase">Market</div></div>
+      <button id="drawer-close" class="text-muted hover:text-cream transition text-xl"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="space-y-1">
+      <a href="/en/index.html"    class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Home</a>
+      <a href="/en/about.html"    class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">About Us</a>
+      <a href="/en/products.html" class="flex items-center gap-3 px-3 py-3 rounded-lg text-gold bg-surface2 font-medium text-sm">Products</a>
+      <a href="/en/contact.html"  class="flex items-center gap-3 px-3 py-3 rounded-lg text-cream/70 hover:text-cream hover:bg-surface2 transition text-sm">Contact</a>
+    </nav>
+    <div class="mt-8 pt-6 border-t border-gold/10">
+      <div class="flex gap-3"><a href="/urunler.html" class="text-cream/50 hover:text-cream transition text-sm">TR</a><span class="text-muted text-sm">|</span><span class="text-gold font-semibold text-sm">EN</span></div>
+    </div>
+  </div>
+
+  <!-- Nav -->
   <nav id="main-nav">
     <div class="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
-      <a href="/en/index.html" class="flex flex-col leading-none"><span class="font-display text-[22px] font-bold text-gold tracking-wide">ÖZERLER</span><span class="text-[9px] tracking-[4px] text-cream/40 uppercase font-light">Market & Off-Licence</span></a>
+      <a href="/en/index.html" class="flex flex-col leading-none">
+        <span class="font-display text-[22px] font-bold text-gold tracking-wide">ÖZERLER</span>
+        <span class="text-[9px] tracking-[4px] text-cream/40 uppercase font-light">Market & Off-Licence</span>
+      </a>
       <div class="hidden md:flex items-center gap-8">
         <a href="/en/index.html"    class="nav-link">Home</a>
         <a href="/en/about.html"    class="nav-link">About Us</a>
@@ -42,80 +132,552 @@
         <a href="/en/contact.html"  class="nav-link">Contact</a>
       </div>
       <div class="flex items-center gap-5">
-        <div class="hidden md:flex items-center gap-2 text-xs tracking-widest"><a href="/urunler.html" class="text-cream/50 hover:text-cream transition">TR</a><span class="text-muted">|</span><span class="text-gold font-semibold">EN</span></div>
-        <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." class="hidden md:flex items-center gap-2 bg-[#25D366] text-white text-xs font-semibold px-4 py-2 rounded-full transition hover:bg-[#1fbd5a]"><i class="fa-brands fa-whatsapp text-sm"></i> Order Now</a>
-        <button id="menu-toggle" class="md:hidden text-cream/80 hover:text-cream transition"><i class="fa-solid fa-bars text-xl"></i></button>
+        <div class="hidden md:flex items-center gap-2 text-xs tracking-widest">
+          <a href="/urunler.html" class="text-cream/50 hover:text-cream transition">TR</a>
+          <span class="text-muted">|</span>
+          <span class="text-gold font-semibold">EN</span>
+        </div>
+        <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order."
+           class="hidden md:flex items-center gap-2 bg-[#25D366] text-white text-xs font-semibold px-4 py-2 rounded-full transition hover:bg-[#1fbd5a]">
+          <i class="fa-brands fa-whatsapp text-sm"></i> Order Now
+        </a>
+        <button id="menu-toggle" class="md:hidden text-cream/80 hover:text-cream transition">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
       </div>
     </div>
   </nav>
 
-  <section class="pt-36 pb-12 bg-bg relative overflow-hidden">
+  <!-- Page Hero -->
+  <section class="pt-36 pb-10 bg-bg relative overflow-hidden">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 80% 50%, rgba(212,168,67,0.05) 0%, transparent 60%)"></div>
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <p class="text-gold text-xs tracking-[4px] uppercase mb-4">What We Sell</p>
       <h1 class="font-display text-5xl md:text-7xl font-bold text-cream mb-4 leading-tight">Product Catalogue</h1>
-      <p class="text-muted text-lg max-w-xl">Browse by category below. To order, message us on WhatsApp or call.</p>
+      <p class="text-muted text-lg max-w-xl">Manavgat's widest product range. Browse a category, order via WhatsApp or visit our store.</p>
       <div class="section-divider left mt-6"></div>
     </div>
   </section>
 
-  <!-- Catalogue Grid -->
-  <section class="py-14 bg-bg">
-    <div class="max-w-6xl mx-auto px-6">
-      <div id="katalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <!-- Sticky Category Nav -->
+  <div id="kat-nav">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center gap-1 overflow-x-auto py-2 scrollbar-hide">
+        <a href="#soguk"       class="kat-link"><i class="fa-solid fa-bottle-water text-xs"></i>Beverages</a>
+        <a href="#sicak"       class="kat-link"><i class="fa-solid fa-mug-hot text-xs"></i>Hot Drinks</a>
+        <a href="#kahvaltilik" class="kat-link"><i class="fa-solid fa-egg text-xs"></i>Breakfast</a>
+        <a href="#sut"         class="kat-link"><i class="fa-solid fa-cow text-xs"></i>Dairy</a>
+        <a href="#temel"       class="kat-link"><i class="fa-solid fa-basket-shopping text-xs"></i>Groceries</a>
+        <a href="#kuruyemis"   class="kat-link"><i class="fa-solid fa-cookie-bite text-xs"></i>Snacks</a>
+        <a href="#dondurulmus" class="kat-link"><i class="fa-solid fa-snowflake text-xs"></i>Frozen</a>
+        <a href="#firin"       class="kat-link"><i class="fa-solid fa-bread-slice text-xs"></i>Bakery</a>
+        <a href="#temizlik"    class="kat-link"><i class="fa-solid fa-spray-can-sparkles text-xs"></i>Cleaning</a>
+        <a href="#kisisel"     class="kat-link"><i class="fa-solid fa-heart text-xs"></i>Personal Care</a>
+        <a href="#evcil"       class="kat-link"><i class="fa-solid fa-paw text-xs"></i>Pet Supplies</a>
+        <div class="w-px h-5 bg-crimson/30 mx-1 flex-shrink-0"></div>
+        <a href="#alkol"       class="kat-link restricted"><i class="fa-solid fa-wine-bottle text-xs"></i>Alcohol & Tobacco</a>
+      </div>
+    </div>
+  </div>
 
-      <!-- Alcohol / Tobacco cards -->
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20information%20about%20alcoholic%20beverages."
-           target="_blank" rel="noopener"
-           class="flex items-center gap-5 p-5 rounded-2xl border border-dashed border-crimson/30 bg-crimson/5 hover:bg-crimson/10 transition group">
-          <div class="w-12 h-12 rounded-full bg-crimson/15 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-wine-bottle text-crimson text-lg"></i>
+  <!-- ========== CATEGORY SECTIONS ========== -->
+  <main class="bg-bg py-12">
+    <div class="max-w-6xl mx-auto px-6 space-y-6">
+
+      <!-- 1. COLD BEVERAGES -->
+      <section id="soguk" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-bottle-water text-gold text-2xl"></i>
+            </div>
           </div>
-          <div class="flex-1">
-            <h3 class="text-cream font-semibold">Alcoholic Beverages</h3>
-            <p class="text-muted text-xs mt-0.5">Beer, wine, raki, whisky and more — Turkish law prohibits displaying prices or images online.</p>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Cold Beverages</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              A full range of cold and refreshing drinks. From spring water and sparkling water for everyday hydration, to soft drinks, natural fruit juices, energy drinks, traditional ayran and kefir, and iced tea varieties. Available in all brands and sizes.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Spring Water</span>
+              <span class="chip">Sparkling Water</span>
+              <span class="chip">Soda</span>
+              <span class="chip">Cola & Soft Drinks</span>
+              <span class="chip">Fruit Juice</span>
+              <span class="chip">Energy Drinks</span>
+              <span class="chip">Ayran & Kefir</span>
+              <span class="chip">Iced Tea</span>
+              <span class="chip">Lemonade</span>
+              <span class="chip">Sports Drinks</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20cold%20beverages."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
           </div>
-          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl group-hover:scale-110 transition"></i>
-        </a>
-        <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20information%20about%20tobacco%20products."
-           target="_blank" rel="noopener"
-           class="flex items-center gap-5 p-5 rounded-2xl border border-dashed border-crimson/30 bg-crimson/5 hover:bg-crimson/10 transition group">
-          <div class="w-12 h-12 rounded-full bg-crimson/15 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-smoking text-crimson text-lg"></i>
+        </div>
+      </section>
+
+      <!-- 2. HOT DRINKS -->
+      <section id="sicak" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-mug-hot text-gold text-2xl"></i>
+            </div>
           </div>
-          <div class="flex-1">
-            <h3 class="text-cream font-semibold">Tobacco Products</h3>
-            <p class="text-muted text-xs mt-0.5">Wide range of tobacco available in store. Message us on WhatsApp for more info. 18+ only.</p>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Hot Drinks</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Hot drink options for any time of day. Turkish tea and glass-cup tea in the widest brand range, instant coffee, filter coffee, Nescafé and herbal teas. Teapot and packet sizes, plus seasonal hot chocolate, linden flower and sage varieties.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Loose Leaf Tea</span>
+              <span class="chip">Teapot Bags</span>
+              <span class="chip">Glass-cup Bags</span>
+              <span class="chip">Herbal Teas</span>
+              <span class="chip">Instant Coffee</span>
+              <span class="chip">Nescafé</span>
+              <span class="chip">Filter Coffee</span>
+              <span class="chip">Hot Chocolate</span>
+              <span class="chip">Linden & Sage</span>
+              <span class="chip">Salep</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20hot%20drinks."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
           </div>
-          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl group-hover:scale-110 transition"></i>
-        </a>
+        </div>
+      </section>
+
+      <!-- 3. BREAKFAST & DELI -->
+      <section id="kahvaltilik" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-egg text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Breakfast & Deli</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Everything you need for a proper breakfast spread. White cheese, kashar, tulum and various cheeses; green and black olive varieties; sucuk sausage and salami; natural and flower honey and jam varieties; butter, margarine and hazelnut spread. Ready-made mezze platters also available.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">White Cheese</span>
+              <span class="chip">Kashar Cheese</span>
+              <span class="chip">Tulum Cheese</span>
+              <span class="chip">Green & Black Olives</span>
+              <span class="chip">Sucuk Sausage</span>
+              <span class="chip">Salami & Sausages</span>
+              <span class="chip">Honey & Jam</span>
+              <span class="chip">Hazelnut Spread</span>
+              <span class="chip">Butter</span>
+              <span class="chip">Tahini & Molasses</span>
+              <span class="chip">Ready Mezze</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20breakfast%20products."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. DAIRY -->
+      <section id="sut" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-cow text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Dairy Products</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              From fresh and long-life milk varieties to yogurt, cream and dairy products. Daily milk, full-fat and semi-skimmed options, ayran, kefir, plain yogurt, fruit yogurt and various package sizes available.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Fresh Milk</span>
+              <span class="chip">UHT Milk</span>
+              <span class="chip">Lactose-free Milk</span>
+              <span class="chip">Yogurt (500g / 1kg)</span>
+              <span class="chip">Fruit Yogurt</span>
+              <span class="chip">Kefir</span>
+              <span class="chip">Cream & Clotted Cream</span>
+              <span class="chip">Ice Cream</span>
+              <span class="chip">Milk Desserts</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20dairy%20products."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. BASIC GROCERIES -->
+      <section id="temel" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-basket-shopping text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Basic Groceries & Legumes</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              All the kitchen staples in one place. Flour, sugar, salt, oil, olive oil varieties; pasta, rice, bulgur and various legumes; canned vegetables and fruit; vinegar, tomato paste, ketchup, mayonnaise and ready sauces. Eggs and fresh bread available daily.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Olive Oil & Sunflower Oil</span>
+              <span class="chip">Flour & Sugar</span>
+              <span class="chip">Salt & Spices</span>
+              <span class="chip">Pasta Varieties</span>
+              <span class="chip">Rice & Bulgur</span>
+              <span class="chip">Lentils & Chickpeas</span>
+              <span class="chip">Beans</span>
+              <span class="chip">Canned Vegetables</span>
+              <span class="chip">Tomato Paste</span>
+              <span class="chip">Vinegar & Sauces</span>
+              <span class="chip">Eggs</span>
+              <span class="chip">Fresh Bread (daily)</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20basic%20groceries."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. NUTS & SNACKS -->
+      <section id="kuruyemis" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-cookie-bite text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Nuts & Snacks</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Sweet or salty? Both. From potato crisps, corn chips and nut varieties to chocolate, wafers and biscuits; from gummies and sweets to popcorn. Individual packs and large sizes available.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Potato Crisps</span>
+              <span class="chip">Corn Chips</span>
+              <span class="chip">Hazelnuts & Peanuts</span>
+              <span class="chip">Mixed Nuts</span>
+              <span class="chip">Chocolate</span>
+              <span class="chip">Wafers</span>
+              <span class="chip">Biscuits & Crackers</span>
+              <span class="chip">Gummies & Sweets</span>
+              <span class="chip">Popcorn</span>
+              <span class="chip">Cake & Pastry</span>
+              <span class="chip">Chewing Gum</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20nuts%20and%20snacks."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FROZEN PRODUCTS -->
+      <section id="dondurulmus" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-snowflake text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Frozen Products</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Convenient and tasty frozen foods. Ice cream varieties (bar, scoop, family size), frozen vegetables and fruit, ready-made frozen pastry, pizza and flatbreads. Easy-to-prepare options — especially popular during summer.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Ice Cream Bars & Scoops</span>
+              <span class="chip">Family Ice Cream</span>
+              <span class="chip">Frozen Vegetables</span>
+              <span class="chip">Frozen Fruit</span>
+              <span class="chip">Ready-made Pastry</span>
+              <span class="chip">Frozen Pizza</span>
+              <span class="chip">Pide & Lahmacun</span>
+              <span class="chip">Nuggets & Sausages</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20frozen%20products."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. BAKERY -->
+      <section id="firin" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-bread-slice text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Bakery Products</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Fresh bread and baked goods daily. White loaf, village bread, wholemeal bread, toast bread and sandwich rolls; simit, pastry rolls and Turkish açma; ready-made sweets — cake, cookies and pastries. Fresh products arrive every morning.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">White Loaf</span>
+              <span class="chip">Village Bread</span>
+              <span class="chip">Wholemeal Bread</span>
+              <span class="chip">Toast Bread</span>
+              <span class="chip">Sandwich Rolls</span>
+              <span class="chip">Simit & Pastry Rolls</span>
+              <span class="chip">Açma</span>
+              <span class="chip">Ready Cake</span>
+              <span class="chip">Cookies</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20bread%20and%20bakery%20products."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CLEANING -->
+      <section id="temizlik" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-spray-can-sparkles text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Cleaning Products</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Everything for home and kitchen cleaning. Dish detergent and liquid, laundry detergent, fabric softener, bleach; surface cleaner, bathroom cleaner, toilet cleaner; bin bags, dishwashing sponges, mop and cloth varieties.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Dish Detergent</span>
+              <span class="chip">Laundry Detergent</span>
+              <span class="chip">Fabric Softener</span>
+              <span class="chip">Bleach</span>
+              <span class="chip">Surface Cleaner</span>
+              <span class="chip">Bathroom & WC Cleaner</span>
+              <span class="chip">Glass Cleaner</span>
+              <span class="chip">Bin Bags</span>
+              <span class="chip">Brushes & Sponges</span>
+              <span class="chip">Kitchen Roll</span>
+              <span class="chip">Toilet Paper</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20cleaning%20products."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. PERSONAL CARE -->
+      <section id="kisisel" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-heart text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Personal Care & Hygiene</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Daily personal care and hygiene essentials. Shampoo, conditioner, shower gel, soap; toothpaste, toothbrush, mouthwash; deodorant, perfume; face and hand cream; shaving products; hygiene items and wet wipes. Baby care products also available.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Shampoo & Conditioner</span>
+              <span class="chip">Shower Gel & Soap</span>
+              <span class="chip">Toothpaste & Toothbrush</span>
+              <span class="chip">Mouthwash</span>
+              <span class="chip">Deodorant</span>
+              <span class="chip">Hand Cream & Lotion</span>
+              <span class="chip">Shaving Products</span>
+              <span class="chip">Wet Wipes</span>
+              <span class="chip">Sanitary Pads</span>
+              <span class="chip">Nappies / Diapers</span>
+              <span class="chip">Sun Cream</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20personal%20care%20products."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. PET SUPPLIES -->
+      <section id="evcil" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-paw text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Pet Supplies</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              All the essentials for your furry friends. Cat food in wet and dry varieties in different sizes and brands; dog food dry and canned; cat litter; bird seed; small animal food. Basic pet accessories also stocked.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Cat Food (Wet)</span>
+              <span class="chip">Cat Food (Dry)</span>
+              <span class="chip">Cat Litter</span>
+              <span class="chip">Dog Food (Dry)</span>
+              <span class="chip">Dog Food (Canned)</span>
+              <span class="chip">Dog Treats</span>
+              <span class="chip">Bird Seed</span>
+              <span class="chip">Small Animal Food</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20order%20pet%20supplies."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Order from This Category
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIVIDER -->
+      <div class="flex items-center gap-4 py-4">
+        <div class="flex-1 h-px bg-crimson/20"></div>
+        <span class="text-crimson/60 text-xs tracking-[3px] uppercase font-light flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-[10px]"></i>
+          Legally Restricted Categories
+          <i class="fa-solid fa-triangle-exclamation text-[10px]"></i>
+        </span>
+        <div class="flex-1 h-px bg-crimson/20"></div>
       </div>
 
-      <!-- CTA -->
-      <div class="mt-12 text-center bg-surface rounded-2xl border border-gold/15 p-10">
+      <!-- 12. ALCOHOL & TOBACCO (restricted) -->
+      <section id="alkol" class="kat-section restricted-card rounded-2xl p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-crimson/10 border border-crimson/20 flex items-center justify-center">
+              <i class="fa-solid fa-wine-bottle text-crimson text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <h2 class="font-display text-2xl md:text-3xl font-bold text-cream">Alcoholic Beverages & Tobacco</h2>
+              <span class="inline-flex items-center gap-1.5 bg-crimson/15 border border-crimson/25 text-crimson text-xs px-3 py-1 rounded-full font-medium">
+                <i class="fa-solid fa-lock text-[10px]"></i> 18+
+              </span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-3">
+              We stock a wide range of alcoholic beverages and tobacco products. Please visit our store in person or contact us via WhatsApp for details. Beer, wine, raki, whisky and other spirits; cigarettes and tobacco products available.
+            </p>
+            <p class="text-crimson/70 text-xs mb-5 flex items-start gap-2">
+              <i class="fa-solid fa-circle-info mt-0.5 flex-shrink-0"></i>
+              <span>Under Turkish laws 4207 and 4250, brand names, prices and images of alcohol and tobacco products cannot be shared online. Sales strictly limited to persons 18 and over.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20information%20about%20alcoholic%20beverages."
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+                <i class="fa-brands fa-whatsapp"></i> Ask via WhatsApp
+              </a>
+              <a href="/en/contact.html"
+                 class="inline-flex items-center gap-2 border border-crimson/30 text-crimson/80 hover:bg-crimson/10 text-sm font-medium px-5 py-2.5 rounded-xl transition">
+                <i class="fa-solid fa-location-dot text-xs"></i> Visit Our Store
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Box -->
+      <div class="text-center bg-surface rounded-2xl border border-gold/15 p-10 mt-4">
         <i class="fa-brands fa-whatsapp text-[#25D366] text-4xl mb-4"></i>
         <h3 class="font-display text-2xl font-bold text-cream mb-2">Can't find what you need?</h3>
         <p class="text-muted text-sm mb-6 max-w-md mx-auto">We couldn't list every item on our shelves here. Message us on WhatsApp and we'll let you know what we have.</p>
         <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order."
+           target="_blank" rel="noopener"
            class="btn-primary text-base inline-flex">
           <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
         </a>
       </div>
-    </div>
-  </section>
 
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer class="bg-[#0a0602]">
     <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10">
-      <div><div class="font-display text-2xl font-bold text-gold">ÖZERLER</div><div class="text-xs tracking-[4px] text-cream/30 uppercase mb-4">Market & Off-Licence</div><p class="text-muted text-sm">Manavgat's neighbourhood market.</p><div class="flex items-center gap-3 mt-4"><a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/10 transition"><i class="fa-brands fa-whatsapp"></i></a><a href="https://www.instagram.com/ozerler.market07/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-muted hover:text-[#E1306C] hover:border-[#E1306C]/30 transition"><i class="fa-brands fa-instagram"></i></a><span class="text-muted/50 text-xs">@ozerler.market07</span></div></div>
-      <div><h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Pages</h3><ul class="space-y-2.5"><li><a href="/en/index.html" class="text-muted hover:text-cream transition text-sm">Home</a></li><li><a href="/en/about.html" class="text-muted hover:text-cream transition text-sm">About Us</a></li><li><a href="/en/products.html" class="text-muted hover:text-cream transition text-sm">Products</a></li><li><a href="/en/contact.html" class="text-muted hover:text-cream transition text-sm">Contact</a></li></ul></div>
-      <div><h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Contact</h3><div class="space-y-3 text-sm"><div class="flex gap-3 text-muted"><i class="fa-solid fa-location-dot text-gold mt-0.5"></i><span>Çağlayan Mah. Hastane Cad. No:140<br>Manavgat, Antalya, Turkey</span></div><div class="flex gap-3 items-center"><i class="fa-solid fa-phone text-gold"></i><a href="tel:+905462782300" class="text-gold font-semibold">+90 546 278 23 00</a></div><div class="flex gap-3 items-center text-muted"><i class="fa-solid fa-clock text-gold"></i><span>Every day 07:00 – 02:00</span></div></div></div>
+      <div>
+        <div class="font-display text-2xl font-bold text-gold">ÖZERLER</div>
+        <div class="text-xs tracking-[4px] text-cream/30 uppercase mb-4">Market & Off-Licence</div>
+        <p class="text-muted text-sm leading-relaxed">Manavgat's neighbourhood market.</p>
+        <div class="flex items-center gap-3 mt-4">
+          <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/10 transition"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/ozerler.market07/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-muted hover:text-[#E1306C] hover:border-[#E1306C]/30 transition"><i class="fa-brands fa-instagram"></i></a>
+          <span class="text-muted/50 text-xs">@ozerler.market07</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Pages</h3>
+        <ul class="space-y-2.5">
+          <li><a href="/en/index.html"    class="text-muted hover:text-cream transition text-sm">Home</a></li>
+          <li><a href="/en/about.html"    class="text-muted hover:text-cream transition text-sm">About Us</a></li>
+          <li><a href="/en/products.html" class="text-muted hover:text-cream transition text-sm">Products</a></li>
+          <li><a href="/en/contact.html"  class="text-muted hover:text-cream transition text-sm">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Contact</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex gap-3 text-muted"><i class="fa-solid fa-location-dot text-gold mt-0.5"></i><span>Çağlayan Mah. Hastane Cad. No:140<br>Manavgat, Antalya, Turkey</span></div>
+          <div class="flex gap-3 items-center"><i class="fa-solid fa-phone text-gold"></i><a href="tel:+905462782300" class="text-gold font-semibold hover:text-gold-light transition">+90 546 278 23 00</a></div>
+          <div class="flex gap-3 items-center text-muted"><i class="fa-solid fa-clock text-gold"></i><span>Every day 07:00 – 02:00</span></div>
+        </div>
+      </div>
     </div>
-    <div class="footer-legal"><p class="mb-1">⚠️ <strong>Legal Notice:</strong> Alcoholic beverages and tobacco products are not sold to persons under 18. Tobacco products are harmful to health.</p><p>© 2026 Özerler Market.</p></div>
+    <div class="footer-legal">
+      <p class="mb-1">⚠️ <strong>Legal Notice:</strong> Alcoholic beverages and tobacco products are not sold to persons under 18. Tobacco products are harmful to health.</p>
+      <p>© 2026 Özerler Market. All rights reserved.</p>
+    </div>
   </footer>
 
   <a href="https://wa.me/905462782300?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." id="whatsapp-float" aria-label="Order via WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
   <script src="/js/main.js"></script>
-  <script src="/js/catalog.js?v=3"></script>
+  <script>
+    const sections = document.querySelectorAll('.kat-section');
+    const navLinks = document.querySelectorAll('#kat-nav .kat-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>

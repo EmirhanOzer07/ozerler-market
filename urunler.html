@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ürünlerimiz | Özerler Market – Manavgat</title>
-  <meta name="description" content="Özerler Market ürün kataloğu. Soğuk meşrubat, kuruyemiş, şarküteri, temel gıda, temizlik ürünleri ve daha fazlası. Manavgat'a hızlı paket servis.">
+  <title>Ürünlerimiz | Özerler Market – Manavgat Mahalle Marketi</title>
+  <meta name="description" content="Özerler Market ürün kataloğu. Soğuk meşrubat, kahvaltılık, kuruyemiş, temel gıda, temizlik, evcil hayvan ürünleri ve daha fazlası. Manavgat'a hızlı paket servis.">
   <link rel="canonical" href="https://www.ozerlermarket.com.tr/urunler">
-  <meta property="og:title" content="Ürünlerimiz | Özerler Market">
-  <meta property="og:description" content="Manavgat'ın en geniş ürün yelpazesi. Online katalog.">
+  <meta property="og:title" content="Ürünlerimiz | Özerler Market – Manavgat">
+  <meta property="og:description" content="Manavgat'ın en geniş ürün yelpazesi. Soğuk içecek, şarküteri, temel gıda, temizlik ve daha fazlası. WhatsApp sipariş.">
   <meta property="og:url" content="https://www.ozerlermarket.com.tr/urunler">
+  <meta property="og:type" content="website">
   <link rel="alternate" hreflang="tr" href="https://www.ozerlermarket.com.tr/urunler">
   <link rel="alternate" hreflang="en" href="https://www.ozerlermarket.com.tr/en/products">
   <link rel="icon" href="/favicon.ico">
@@ -25,6 +26,84 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Sticky category nav */
+    #kat-nav {
+      position: sticky;
+      top: 64px;
+      z-index: 40;
+      background: rgba(20,14,8,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212,168,67,0.12);
+    }
+    #kat-nav .kat-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #9a8570;
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    #kat-nav .kat-link:hover,
+    #kat-nav .kat-link.active {
+      color: #d4a843;
+      background: rgba(212,168,67,0.08);
+    }
+    #kat-nav .kat-link.restricted {
+      color: rgba(139,26,46,0.7);
+    }
+    #kat-nav .kat-link.restricted:hover,
+    #kat-nav .kat-link.restricted.active {
+      color: #8b1a2e;
+      background: rgba(139,26,46,0.08);
+    }
+    /* Subcategory chips */
+    .chip {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      background: rgba(30,19,9,1);
+      border: 1px solid rgba(212,168,67,0.12);
+      color: #9a8570;
+    }
+    /* Category section scroll offset */
+    .kat-section {
+      scroll-margin-top: 120px;
+    }
+    /* Restricted card */
+    .restricted-card {
+      border: 1px dashed rgba(139,26,46,0.35);
+      background: rgba(139,26,46,0.04);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Özerler Market Ürün Kategorileri",
+    "description": "Manavgat Özerler Market ürün katalog kategorileri",
+    "numberOfItems": 11,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Soğuk Meşrubatlar"},
+      {"@type":"ListItem","position":2,"name":"Sıcak İçecekler"},
+      {"@type":"ListItem","position":3,"name":"Kahvaltılık & Şarküteri"},
+      {"@type":"ListItem","position":4,"name":"Süt & Süt Ürünleri"},
+      {"@type":"ListItem","position":5,"name":"Temel Gıdalar & Bakliyat"},
+      {"@type":"ListItem","position":6,"name":"Kuruyemiş & Atıştırmalık"},
+      {"@type":"ListItem","position":7,"name":"Dondurulmuş Ürünler"},
+      {"@type":"ListItem","position":8,"name":"Fırın & Unlu Mamul"},
+      {"@type":"ListItem","position":9,"name":"Temizlik Ürünleri"},
+      {"@type":"ListItem","position":10,"name":"Kişisel Bakım"},
+      {"@type":"ListItem","position":11,"name":"Evcil Hayvan"}
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-bg text-cream font-sans antialiased overflow-x-hidden">
@@ -100,61 +179,477 @@
   </nav>
 
   <!-- Page Hero -->
-  <section class="pt-36 pb-12 bg-bg relative overflow-hidden">
+  <section class="pt-36 pb-10 bg-bg relative overflow-hidden">
     <div class="absolute inset-0" style="background: radial-gradient(ellipse at 80% 50%, rgba(212,168,67,0.05) 0%, transparent 60%)"></div>
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <p class="text-gold text-xs tracking-[4px] uppercase mb-4">Ne Satıyoruz?</p>
       <h1 class="font-display text-5xl md:text-7xl font-bold text-cream mb-4 leading-tight">Ürün Kataloğu</h1>
-      <p class="text-muted text-lg max-w-xl">Aşağıdan kategori seçin, sipariş için WhatsApp'tan yazın veya arayın.</p>
+      <p class="text-muted text-lg max-w-xl">Manavgat'ın en geniş ürün yelpazesi. Kategori seçin, WhatsApp'tan sipariş verin veya mağazamıza uğrayın.</p>
       <div class="section-divider left mt-6"></div>
     </div>
   </section>
 
-  <!-- Katalog Grid -->
-  <section class="py-14 bg-bg">
-    <div class="max-w-6xl mx-auto px-6">
-      <div id="katalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  <!-- Sticky Category Nav -->
+  <div id="kat-nav">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center gap-1 overflow-x-auto py-2 scrollbar-hide">
+        <a href="#soguk"       class="kat-link"><i class="fa-solid fa-bottle-water text-xs"></i>Meşrubat</a>
+        <a href="#sicak"       class="kat-link"><i class="fa-solid fa-mug-hot text-xs"></i>Sıcak İçecek</a>
+        <a href="#kahvaltilik" class="kat-link"><i class="fa-solid fa-egg text-xs"></i>Kahvaltılık</a>
+        <a href="#sut"         class="kat-link"><i class="fa-solid fa-cow text-xs"></i>Süt & Peynir</a>
+        <a href="#temel"       class="kat-link"><i class="fa-solid fa-basket-shopping text-xs"></i>Temel Gıda</a>
+        <a href="#kuruyemis"   class="kat-link"><i class="fa-solid fa-cookie-bite text-xs"></i>Kuruyemiş</a>
+        <a href="#dondurulmus" class="kat-link"><i class="fa-solid fa-snowflake text-xs"></i>Dondurulmuş</a>
+        <a href="#firin"       class="kat-link"><i class="fa-solid fa-bread-slice text-xs"></i>Fırın</a>
+        <a href="#temizlik"    class="kat-link"><i class="fa-solid fa-spray-can-sparkles text-xs"></i>Temizlik</a>
+        <a href="#kisisel"     class="kat-link"><i class="fa-solid fa-heart text-xs"></i>Kişisel Bakım</a>
+        <a href="#evcil"       class="kat-link"><i class="fa-solid fa-paw text-xs"></i>Evcil Hayvan</a>
+        <div class="w-px h-5 bg-crimson/30 mx-1 flex-shrink-0"></div>
+        <a href="#alkol"       class="kat-link restricted"><i class="fa-solid fa-wine-bottle text-xs"></i>Alkol & Tütün</a>
+      </div>
+    </div>
+  </div>
 
-      <!-- Alkol / Tütün kartları -->
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <a href="https://wa.me/905462782300?text=Alkoll%C3%BC%20i%C3%A7ecek%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-           target="_blank" rel="noopener"
-           class="flex items-center gap-5 p-5 rounded-2xl border border-dashed border-crimson/30 bg-crimson/5 hover:bg-crimson/10 transition group">
-          <div class="w-12 h-12 rounded-full bg-crimson/15 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-wine-bottle text-crimson text-lg"></i>
+  <!-- ========== KATEGORİ BÖLÜMLER ========== -->
+  <main class="bg-bg py-12">
+    <div class="max-w-6xl mx-auto px-6 space-y-6">
+
+      <!-- 1. SOĞUK MEŞRUBATLAR -->
+      <section id="soguk" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-bottle-water text-gold text-2xl"></i>
+            </div>
           </div>
-          <div class="flex-1">
-            <h3 class="text-cream font-semibold">Alkollü İçecekler</h3>
-            <p class="text-muted text-xs mt-0.5">Bira, şarap, rakı, viski ve daha fazlası — yasal zorunluluk gereği fiyat/görsel paylaşılamamaktadır.</p>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Soğuk Meşrubatlar</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Serin ve serinletici içeceklerin tam koleksiyonu. Günlük tüketim için kaynak suyu ve maden suyundan tutun, hafta sonu için gazlı içecekler, doğal meyve suları, enerji içecekleri, geleneksel ayran ve kefir, soğuk çay çeşitlerine kadar geniş bir yelpaze. Tüm markalar ve ambalaj boyutları mevcuttur.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Kaynak Suyu</span>
+              <span class="chip">Maden Suyu</span>
+              <span class="chip">Soda</span>
+              <span class="chip">Kola & Gazoz</span>
+              <span class="chip">Meyve Suyu</span>
+              <span class="chip">Enerji İçeceği</span>
+              <span class="chip">Ayran & Kefir</span>
+              <span class="chip">Soğuk Çay</span>
+              <span class="chip">Limonata</span>
+              <span class="chip">Spor İçeceği</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=So%C4%9Fuk%20me%C5%9Frubat%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
           </div>
-          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl group-hover:scale-110 transition"></i>
-        </a>
-        <a href="https://wa.me/905462782300?text=T%C3%BCt%C3%BCn%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-           target="_blank" rel="noopener"
-           class="flex items-center gap-5 p-5 rounded-2xl border border-dashed border-crimson/30 bg-crimson/5 hover:bg-crimson/10 transition group">
-          <div class="w-12 h-12 rounded-full bg-crimson/15 flex items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-smoking text-crimson text-lg"></i>
+        </div>
+      </section>
+
+      <!-- 2. SICAK İÇECEKLER -->
+      <section id="sicak" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-mug-hot text-gold text-2xl"></i>
+            </div>
           </div>
-          <div class="flex-1">
-            <h3 class="text-cream font-semibold">Tütün Ürünleri</h3>
-            <p class="text-muted text-xs mt-0.5">Geniş tütün yelpazemiz için WhatsApp'tan bilgi alabilirsiniz. 18 yaş altına satış yapılmaz.</p>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Sıcak İçecekler</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Günün her saatine uygun sıcak içecek seçenekleri. Türk çayı ve bardak çay en geniş marka yelpazesiyle, hazır kahve, filtre kahve, neskafe ve bitki çayları. Demlik ve paket çay boyutları, kışlık sıcak çikolata ve ıhlamur çeşitleri de bulunmaktadır.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Dökme Çay</span>
+              <span class="chip">Demlik Poşet Çay</span>
+              <span class="chip">Bardak Poşet Çay</span>
+              <span class="chip">Bitki Çayları</span>
+              <span class="chip">Hazır Kahve</span>
+              <span class="chip">Neskafe</span>
+              <span class="chip">Filtre Kahve</span>
+              <span class="chip">Sıcak Çikolata</span>
+              <span class="chip">Ihlamur & Adaçayı</span>
+              <span class="chip">Salep</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=S%C4%B1cak%20i%C3%A7ecek%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
           </div>
-          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl group-hover:scale-110 transition"></i>
-        </a>
+        </div>
+      </section>
+
+      <!-- 3. KAHVALTILIK & ŞARKÜTERİ -->
+      <section id="kahvaltilik" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-egg text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Kahvaltılık & Şarküteri</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Sabah sofranız için ihtiyaç duyduğunuz her şey. Beyaz peynir, kaşar, tulum ve çeşitli peynirler; yeşil ve siyah zeytin çeşitleri; kangal sucuk ve salam; doğal bal, çiçek balı ve reçel çeşitleri; tereyağı, margarin ve fındık ezmesi. Hazır tabak mezeler ve pratik kahvaltılık ürünler de mevcuttur.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Beyaz Peynir</span>
+              <span class="chip">Kaşar Peyniri</span>
+              <span class="chip">Tulum Peyniri</span>
+              <span class="chip">Yeşil & Siyah Zeytin</span>
+              <span class="chip">Kangal Sucuk</span>
+              <span class="chip">Salam & Sosis</span>
+              <span class="chip">Bal & Reçel</span>
+              <span class="chip">Fındık Ezmesi</span>
+              <span class="chip">Tereyağı</span>
+              <span class="chip">Tahin & Pekmez</span>
+              <span class="chip">Hazır Meze</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Kahvalt%C4%B1l%C4%B1k%20%C3%BCr%C3%BCn%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SÜT & SÜT ÜRÜNLERİ -->
+      <section id="sut" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-cow text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Süt & Süt Ürünleri</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Taze ve uzun ömürlü süt çeşitlerinden yoğurt, krema ve sütlü ürünlere kadar geniş bir soğuk zincir ürün grubu. Günlük süt, yağlı ve yarım yağlı seçenekler, ayran, kefir, sade yoğurt, meyveli yoğurt ve çeşitli boyutlarda ambalajlar bulunmaktadır.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Günlük Süt</span>
+              <span class="chip">Uzun Ömürlü Süt</span>
+              <span class="chip">Laktozsuz Süt</span>
+              <span class="chip">Yoğurt (500g / 1kg)</span>
+              <span class="chip">Meyveli Yoğurt</span>
+              <span class="chip">Kefir</span>
+              <span class="chip">Krema & Kaymak</span>
+              <span class="chip">Dondurma</span>
+              <span class="chip">Sütlü Tatlılar</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=S%C3%BCt%20ve%20s%C3%BCt%20%C3%BCr%C3%BCnleri%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. TEMEL GIDALAR & BAKLİYAT -->
+      <section id="temel" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-basket-shopping text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Temel Gıdalar & Bakliyat</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Mutfağın temel taşları hepsi bir arada. Un, şeker, tuz, yağ, zeytinyağı çeşitleri; makarna, pirinç, bulgur ve çeşitli bakliyat; konserve sebze ve meyve; sirke, salça, ketçap, mayonez ve hazır soslar. Yumurta ve ekmek günlük olarak taze şekilde temin edilmektedir.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Zeytinyağı & Ayçiçek Yağı</span>
+              <span class="chip">Un & Şeker</span>
+              <span class="chip">Tuz & Baharat</span>
+              <span class="chip">Makarna Çeşitleri</span>
+              <span class="chip">Pirinç & Bulgur</span>
+              <span class="chip">Mercimek & Nohut</span>
+              <span class="chip">Fasulye & Barbunya</span>
+              <span class="chip">Konserve Sebze</span>
+              <span class="chip">Domates Salçası</span>
+              <span class="chip">Sirke & Sos</span>
+              <span class="chip">Yumurta</span>
+              <span class="chip">Ekmek (günlük taze)</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Temel%20g%C4%B1da%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. KURUYEMİŞ & ATIŞTIRMALIK -->
+      <section id="kuruyemis" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-cookie-bite text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Kuruyemiş & Atıştırmalık</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Tatlı mı tuzlu mu? Her ikisi de. Patates cipsi, mısır cipsi ve kuruyemiş çeşitlerinden çikolata, gofret ve bisküvilere; jelibon, şekerleme ve sakızdan popcorn ve mısır ürünlerine kadar geniş bir atıştırmalık yelpazesi. Paket ve büyük boy seçenekler mevcuttur.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Patates Cipsi</span>
+              <span class="chip">Mısır Cipsi</span>
+              <span class="chip">Fındık & Fıstık</span>
+              <span class="chip">Karışık Kuruyemiş</span>
+              <span class="chip">Çikolata Çeşitleri</span>
+              <span class="chip">Gofret</span>
+              <span class="chip">Bisküvi & Kraker</span>
+              <span class="chip">Jelibon & Şekerleme</span>
+              <span class="chip">Popcorn</span>
+              <span class="chip">Kek & Pasta</span>
+              <span class="chip">Sakız</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Kuruyemi%C5%9F%20ve%20at%C4%B1%C5%9Ft%C4%B1rmal%C4%B1k%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. DONDURULMUŞ ÜRÜNLER -->
+      <section id="dondurulmus" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-snowflake text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Dondurulmuş Ürünler</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Pratik ve lezzetli dondurulmuş gıdalar. Dondurma çeşitleri (bar, top, aile boyu), dondurulmuş sebze ve meyve, hazır dondurulmuş börek, pizza ve pide gibi pratik yemekler. Çabuk çözünen ve kolayca hazırlanan ürünler özellikle yaz sezonunda hızlı hareket etmektedir.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Dondurma Bar & Top</span>
+              <span class="chip">Aile Boy Dondurma</span>
+              <span class="chip">Dondurulmuş Sebze</span>
+              <span class="chip">Dondurulmuş Meyve</span>
+              <span class="chip">Hazır Börek</span>
+              <span class="chip">Dondurulmuş Pizza</span>
+              <span class="chip">Pide & Lahmacun</span>
+              <span class="chip">Nugget & Sosis</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Dondurulmu%C5%9F%20%C3%BCr%C3%BCn%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. FIRIN & UNLU MAMUL -->
+      <section id="firin" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-bread-slice text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Fırın & Unlu Mamul</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Günlük taze ekmek ve unlu mamuller. Somun ekmek, köy ekmeği, tam buğday ekmeği, tost ekmeği ve sandviç ekmeği çeşitleri; simit, poğaça ve açma; hazır tatlılar — kek, kurabiye ve pasta. Taze ürünler her sabah temin edilmektedir.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Somun Ekmek</span>
+              <span class="chip">Köy Ekmeği</span>
+              <span class="chip">Tam Buğday Ekmek</span>
+              <span class="chip">Tost Ekmeği</span>
+              <span class="chip">Sandviç Ekmeği</span>
+              <span class="chip">Simit & Poğaça</span>
+              <span class="chip">Açma</span>
+              <span class="chip">Hazır Kek</span>
+              <span class="chip">Kurabiye</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Ekmek%20ve%20unlu%20mamul%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. TEMİZLİK ÜRÜNLERİ -->
+      <section id="temizlik" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-spray-can-sparkles text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Temizlik Ürünleri</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Ev ve mutfak temizliği için ihtiyaç duyduğunuz her şey. Bulaşık deterjanı ve sıvısı, çamaşır deterjanı, yumuşatıcı, çamaşır suyu; yüzey temizleyici, banyo temizleyici, tuvalet temizleyici; çöp torbası, bulaşık süngeri, paspas ve bez çeşitleri.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Bulaşık Deterjanı</span>
+              <span class="chip">Çamaşır Deterjanı</span>
+              <span class="chip">Çamaşır Yumuşatıcı</span>
+              <span class="chip">Çamaşır Suyu</span>
+              <span class="chip">Yüzey Temizleyici</span>
+              <span class="chip">Banyo & WC Temizleyici</span>
+              <span class="chip">Cam Temizleyici</span>
+              <span class="chip">Çöp Torbası</span>
+              <span class="chip">Fırça & Sünger</span>
+              <span class="chip">Kağıt Havlu</span>
+              <span class="chip">Tuvalet Kağıdı</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Temizlik%20%C3%BCr%C3%BCn%C3%BC%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. KİŞİSEL BAKIM -->
+      <section id="kisisel" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-heart text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Kişisel Bakım & Hijyen</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Günlük kişisel bakım ve hijyen ürünleri. Şampuan, saç kremi, duş jeli, sabun; diş macunu, diş fırçası, ağız gargarası; deodorant, parfüm; yüz ve el kremi; tıraş ürünleri; hijyen ürünleri ve ıslak mendil. Bebek bakım ürünleri de mevcuttur.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Şampuan & Saç Kremi</span>
+              <span class="chip">Duş Jeli & Sabun</span>
+              <span class="chip">Diş Macunu & Fırça</span>
+              <span class="chip">Ağız Gargarası</span>
+              <span class="chip">Deodorant</span>
+              <span class="chip">El Kremi & Losyon</span>
+              <span class="chip">Tıraş Ürünleri</span>
+              <span class="chip">Islak Mendil</span>
+              <span class="chip">Hijyen Ped</span>
+              <span class="chip">Bebek Bezi</span>
+              <span class="chip">Güneş Kremi</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Ki%C5%9Fisel%20bak%C4%B1m%20%C3%BCr%C3%BCn%C3%BC%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. EVCİL HAYVAN -->
+      <section id="evcil" class="kat-section card p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center">
+              <i class="fa-solid fa-paw text-gold text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-cream mb-2">Evcil Hayvan</h2>
+            <p class="text-muted text-sm leading-relaxed mb-5">
+              Tüy dost dostlarınız için ihtiyaçları bir arada. Kedi maması yaş ve kuru çeşitler, farklı boyut ve markalarda; köpek maması kuru ve konserve; kedi kumu; kuş yemi; kemirgen maması. Temel evcil hayvan aksesuarları da bulunmaktadır.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="chip">Kedi Maması (Yaş)</span>
+              <span class="chip">Kedi Maması (Kuru)</span>
+              <span class="chip">Kedi Kumu</span>
+              <span class="chip">Köpek Maması (Kuru)</span>
+              <span class="chip">Köpek Maması (Konserve)</span>
+              <span class="chip">Köpek Ödülü</span>
+              <span class="chip">Kuş Yemi</span>
+              <span class="chip">Kemirgen Maması</span>
+            </div>
+            <a href="https://wa.me/905462782300?text=Evcil%20hayvan%20%C3%BCr%C3%BCn%C3%BC%20sipari%C5%9Fi%20vermek%20istiyorum."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+              <i class="fa-brands fa-whatsapp"></i> Bu Kategoriden Sipariş Ver
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- AYIRICI -->
+      <div class="flex items-center gap-4 py-4">
+        <div class="flex-1 h-px bg-crimson/20"></div>
+        <span class="text-crimson/60 text-xs tracking-[3px] uppercase font-light flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-[10px]"></i>
+          Yasal Kısıtlı Kategoriler
+          <i class="fa-solid fa-triangle-exclamation text-[10px]"></i>
+        </span>
+        <div class="flex-1 h-px bg-crimson/20"></div>
       </div>
 
-      <!-- CTA -->
-      <div class="mt-12 text-center bg-surface rounded-2xl border border-gold/15 p-10">
+      <!-- 12. ALKOL & TÜTÜN (restricted) -->
+      <section id="alkol" class="kat-section restricted-card rounded-2xl p-7 md:p-10">
+        <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-crimson/10 border border-crimson/20 flex items-center justify-center">
+              <i class="fa-solid fa-wine-bottle text-crimson text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <h2 class="font-display text-2xl md:text-3xl font-bold text-cream">Alkollü İçecekler & Tütün Ürünleri</h2>
+              <span class="inline-flex items-center gap-1.5 bg-crimson/15 border border-crimson/25 text-crimson text-xs px-3 py-1 rounded-full font-medium">
+                <i class="fa-solid fa-lock text-[10px]"></i> 18+
+              </span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-3">
+              Geniş alkollü içecek ve tütün ürünleri yelpazemiz için mağazamıza bizzat uğrayabilir veya WhatsApp'tan bilgi alabilirsiniz. Bira, şarap, rakı, viski ve diğer içkiler; sigara ve tütün ürünleri çeşitleri mevcuttur.
+            </p>
+            <p class="text-crimson/70 text-xs mb-5 flex items-start gap-2">
+              <i class="fa-solid fa-circle-info mt-0.5 flex-shrink-0"></i>
+              <span>Türkiye 4207 ve 4250 sayılı kanunlar gereği alkol ve tütün ürünlerine ait marka adı, fiyat ve görsel internet ortamında paylaşılamamaktadır. 18 yaş altına satış kesinlikle yapılmamaktadır.</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://wa.me/905462782300?text=Alkoll%C3%BC%20i%C3%A7ecek%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                 target="_blank" rel="noopener"
+                 class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbd5a] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Bilgi Al
+              </a>
+              <a href="/iletisim.html"
+                 class="inline-flex items-center gap-2 border border-crimson/30 text-crimson/80 hover:bg-crimson/10 text-sm font-medium px-5 py-2.5 rounded-xl transition">
+                <i class="fa-solid fa-location-dot text-xs"></i> Mağazaya Uğra
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Kutusu -->
+      <div class="text-center bg-surface rounded-2xl border border-gold/15 p-10 mt-4">
         <i class="fa-brands fa-whatsapp text-[#25D366] text-4xl mb-4"></i>
         <h3 class="font-display text-2xl font-bold text-cream mb-2">Aradığınızı bulamadınız mı?</h3>
         <p class="text-muted text-sm mb-6 max-w-md mx-auto">Rafımızdaki her ürünü buraya sığdıramadık. WhatsApp'tan yazın, ne var ne yok söyleyelim.</p>
         <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum."
+           target="_blank" rel="noopener"
            class="btn-primary text-base inline-flex">
           <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Sipariş Ver
         </a>
       </div>
+
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-[#0a0602]">
@@ -162,7 +657,12 @@
       <div>
         <div class="font-display text-2xl font-bold text-gold">ÖZERLER</div>
         <div class="text-xs tracking-[4px] text-cream/30 uppercase mb-4">Market & Tekel</div>
-        <p class="text-muted text-sm leading-relaxed">Manavgat'ın mahalle marketi.</p><div class="flex items-center gap-3 mt-4"><a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/10 transition"><i class="fa-brands fa-whatsapp"></i></a><a href="https://www.instagram.com/ozerler.market07/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-muted hover:text-[#E1306C] hover:border-[#E1306C]/30 transition"><i class="fa-brands fa-instagram"></i></a><span class="text-muted/50 text-xs">@ozerler.market07</span></div>
+        <p class="text-muted text-sm leading-relaxed">Manavgat'ın mahalle marketi.</p>
+        <div class="flex items-center gap-3 mt-4">
+          <a href="https://wa.me/905462782300?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-[#25D366] hover:bg-[#25D366]/10 transition"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/ozerler.market07/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface2 border border-gold/10 flex items-center justify-center text-muted hover:text-[#E1306C] hover:border-[#E1306C]/30 transition"><i class="fa-brands fa-instagram"></i></a>
+          <span class="text-muted/50 text-xs">@ozerler.market07</span>
+        </div>
       </div>
       <div>
         <h3 class="text-gold text-xs tracking-[3px] uppercase mb-5">Sayfalar</h3>
@@ -193,6 +693,23 @@
   <button id="back-to-top" aria-label="Yukarı"><i class="fa-solid fa-chevron-up"></i></button>
 
   <script src="/js/main.js"></script>
-  <script src="/js/catalog.js?v=3"></script>
+  <script>
+    // Sticky nav active state on scroll
+    const sections = document.querySelectorAll('.kat-section');
+    const navLinks = document.querySelectorAll('#kat-nav .kat-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
