@@ -1,60 +1,79 @@
-# Audit — Yasal Uyumluluk & Kalite Kontrolü
+# /audit — Özerler Market Uyumluluk & Kalite Denetimi
 
 ## 1. Alkol/Tütün Marka Adı Taraması
-HTML dosyalarında marka adı olup olmadığını kontrol et:
+```bash
+grep -rin "efes\|tuborg\|heineken\|miller\|corona\|jack daniel\|johnnie walker\|jameson\|absolut\|smirnoff\|marlboro\|winston\|camel\|kent\|parliament\|iqos\|philip morris" --include="*.html" .
 ```
-grep -rin "efes\|tuborg\|heineken\|miller\|corona\|jack daniel\|johnnie walker\|jameson\|absolut\|smirnoff\|marlboro\|winston\|camel\|kent\|parliament\|iqos\|lm\|philip morris" --include="*.html" .
-```
-**Beklenen sonuç:** Eşleşme yok.
+**Beklenen:** Eşleşme yok.
 
 ## 2. Alkol/Tütün Fiyat Taraması
-Alkol/tütün kategorilerinde fiyat bilgisi var mı:
-```
+```bash
 grep -n "fiyat\|₺\|TL\|price" urunler.html en/products.html
 ```
-Alkol veya tütün ile birlikte fiyat bilgisi olmamalı.
+Alkol veya tütün bağlamında fiyat bilgisi olmamalı.
 
-## 3. 18+ Modal Kontrolü
-Her sayfada `age-gate` div'i var mı:
-```
+## 3. Age Gate Kontrolü
+```bash
 grep -rL "age-gate" --include="*.html" .
 ```
-**Beklenen sonuç:** Boş liste (tüm sayfalarda var).
+**Beklenen:** Yalnızca `404.html` ve `tesekkur.html` listede çıkabilir.
 
 ## 4. Footer Yasal Uyarı Kontrolü
-Her sayfada yasal uyarı var mı:
-```
+```bash
 grep -rL "18 yaş altına satılmaz" --include="*.html" .
 ```
-**Beklenen sonuç:** Boş liste.
+**Beklenen:** Yalnızca `404.html` ve `tesekkur.html` listede çıkabilir.
 
-## 5. sessionStorage Kontrolü (localStorage değil)
-Yaş doğrulaması sessionStorage ile yapılıyor mu:
-```
+## 5. sessionStorage Kullanımı (yaş doğrulaması)
+```bash
 grep -rn "localStorage.*yas\|yas.*localStorage" --include="*.js" .
 ```
-**Beklenen sonuç:** Eşleşme yok — yalnızca `sessionStorage` kullanılmalı.
+**Beklenen:** Eşleşme yok — yalnızca `sessionStorage` kullanılmalı.
 
-## 6. Canonical ve Meta Açıklama
-Her sayfada canonical ve meta description var mı:
-```
+## 6. Canonical ve Meta Description
+```bash
 grep -rL "canonical" --include="*.html" .
-grep -rL "meta name=\"description\"" --include="*.html" .
+grep -rL 'meta name="description"' --include="*.html" .
 ```
 
-## 7. Alt Text Kontrolü
-Resim etiketlerinde alt text eksik mi:
+## 7. hreflang Kontrolü
+TR ve EN sayfalarının çapraz `hreflang` etiketleri olduğunu kontrol et:
+```bash
+grep -rn "hreflang" index.html en/index.html urunler.html en/products.html
 ```
-grep -rn "<img" --include="*.html" . | grep -v "alt="
-```
-**Beklenen sonuç:** Eşleşme yok.
 
-## 8. Bozuk Iç Link Kontrolü
-Tüm href'lerin var olan dosyalara işaret ettiğini elle kontrol et veya:
+## 8. WhatsApp Linkleri
+Tüm WhatsApp linklerinin doğru numarayı içerdiğini kontrol et:
+```bash
+grep -rn "wa.me/" --include="*.html" . | grep -v "905462782300"
 ```
-grep -roh 'href="[^"]*\.html[^"]*"' --include="*.html" . | sort | uniq
-```
-Listeyi gezinerek her dosyanın var olduğunu doğrula.
+**Beklenen:** Eşleşme yok (hepsi doğru numara).
 
-## Rapor
-Sorun bulunursa: dosya adı + satır numarası + sorunun açıklaması şeklinde raporla.
+## 9. Placeholder Görsel Kontrolü
+Gerçek görsel bağlanmadan placeholder kalan dosyalar:
+```bash
+grep -rn "placeholder/urun-genel\|placeholder/blog-kart\|placeholder/magaza-ic" --include="*.html" .
+```
+Listeye bak — gerçek fotoğraf geldikçe placeholder'ları değiştir.
+
+## 10. Bozuk İç Link Kontrolü
+```bash
+grep -roh 'href="/[^"]*\.html[^"]*"' --include="*.html" . | sed 's/.*href="//' | sed 's/".*//' | sort | uniq
+```
+Listeyi gezinerek her dosyanın fiziksel olarak var olduğunu doğrula.
+
+## 11. Alt Text Eksikliği
+```bash
+grep -rn "<img" --include="*.html" . | grep -v 'alt='
+```
+**Beklenen:** Eşleşme yok.
+
+## 12. Google Business Reviews Durumu
+`data/yorumlar.json` dosyasını kontrol et:
+```bash
+cat data/yorumlar.json
+```
+`placeIdConfigured: false` ise Google Business sahipliği henüz doğrulanmamıştır. `js/reviews.js` entegrasyonu beklemede.
+
+## Rapor Formatı
+Sorun bulunursa: `dosya:satır — sorunun açıklaması` şeklinde raporla.
