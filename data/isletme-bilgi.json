@@ -18,13 +18,13 @@
   "whatsapp_mesaj_en": "Hello, I would like to place an order.",
   "email": "",
   "koordinat": {
-    "lat": 36.7989,
-    "lng": 31.4472
+    "lat": 36.7990050923938,
+    "lng": 31.449755
   },
-  "maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.818495245478!2d31.447180075645093!3d36.79890197224753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c35786c031a7ef%3A0x88cc6ab09cd8f26a!2s%C3%96zerler%20Market!5e0!3m2!1str!2str!4v1773882479115!5m2!1str!2str",
-  "maps_link": "https://www.google.com/maps/dir/?api=1&destination=36.7989,31.4472",
+  "maps_embed": "https://maps.google.com/maps?q=36.7990050923938,31.449755&z=17&output=embed",
+  "maps_link": "https://www.google.com/maps/dir/?api=1&destination=36.7990050923938,31.449755",
   "sosyal_medya": {
-    "instagram": "",
+    "instagram": "https://www.instagram.com/ozerler.market07/",
     "facebook": "",
     "whatsapp": "https://wa.me/905462782300"
   },

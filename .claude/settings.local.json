@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(sed -i 's|destination=36\\\\.7989,31\\\\.4472|destination=36.7990050923938,31.449755|g' index.html iletisim.html en/index.html en/contact.html)",
+      "Bash(sed -i 's|\"latitude\": 36\\\\.7989, \"longitude\": 31\\\\.4472|\"latitude\": 36.7990050923938, \"longitude\": 31.449755|g' index.html en/index.html)",
+      "Bash(sed -i 's|__TRACKED_VAR__|__TRACKED_VAR__|g' index.html iletisim.html en/index.html en/contact.html)",
+      "Bash(sed -i 's|\"lat\": 36\\\\.7989|\"lat\": 36.7990050923938|g' data/isletme-bilgi.json)",
+      "Bash(sed -i 's|\"lng\": 31\\\\.4472|\"lng\": 31.449755|g' data/isletme-bilgi.json)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(where py *)",
+      "Read(//usr/**)",
+      "Read(//c/Windows/**)",
+      "PowerShell(Get-Command *)"
+    ]
+  }
+}
