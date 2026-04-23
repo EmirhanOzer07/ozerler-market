@@ -77,11 +77,6 @@
   to   = "/tesekkur.html"
   status = 200
 
-# 404
-[[redirects]]
-  from = "/*"
-  to   = "/404.html"
-  status = 404
 
 # Güvenlik başlıkları
 [[headers]]
